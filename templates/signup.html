@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - CareBridge Hospital Portal</title>
+
+    <!-- CareBridge CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+
+<body>
+
+<div class="signup-page">
+
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <header class="signup-header">
+
+        <!-- Brand -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+
+                    <!-- Heart -->
+
+                    <path
+                        d="M50 88
+                           C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#3b9b35"
+                    />
+
+                    <!-- Medical Plus -->
+
+                    <path
+                        d="M55 30
+                           H65
+                           V40
+                           H75
+                           V50
+                           H65
+                           V60
+                           H55
+                           V50
+                           H45
+                           V40
+                           H55
+                           Z"
+                        fill="#3b9b35"
+                        stroke="#ffffff"
+                        stroke-width="3"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <div class="brand-info">
+
+                <h2>CareBridge</h2>
+
+                <p>Hospital Portal</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Trusted -->
+
+        <div class="trusted">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                Trusted. Secure. Connected.
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main class="signup-main">
+
+
+        <div class="signup-card">
+
+
+            <!-- =================================================
+                 CARD HEADER
+                 ================================================= -->
+
+            <div class="signup-card-header">
+
+
+                <div class="signup-title-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        Create Your
+                        <span>Account</span>
+                    </h1>
+
+                    <p>
+                        Fill in your details to register
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FLASH MESSAGES
+                 ================================================= -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    <div class="signup-messages">
+
+                        {% for category, message in messages %}
+
+                            <div class="signup-message {{ category }}">
+
+                                {% if category == "success" %}
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                {% else %}
+
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                                {% endif %}
+
+                                <span>
+                                    {{ message }}
+                                </span>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+
+
+            <!-- =================================================
+                 SIGNUP FORM
+                 ================================================= -->
+
+            <form
+                action="{{ url_for('signup') }}"
+                method="POST"
+                class="signup-form"
+            >
+
+
+                <!-- =================================================
+                     1. PATIENT ID
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            1. Patient ID
+                        </strong>
+
+                        <span>
+                            (Auto Generated)
+                        </span>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+
+                        <input
+                            type="text"
+                            name="patient_id"
+                            value="{{ next_patient_id }}"
+                            readonly
+                        >
+
+
+                        <i class="fa-solid fa-lock input-end-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     2. FULL NAME
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            2. Full Name
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-user"></i>
+
+
+                        <input
+                            type="text"
+                            name="full_name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     3. DATE OF BIRTH
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            3. Date of Birth
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-regular fa-calendar-days"></i>
+
+
+                        <input
+                            type="date"
+                            name="date_of_birth"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     4. GENDER
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            4. Gender
+                        </strong>
+
+                    </label>
+
+
+                    <div class="gender-options">
+
+
+                        <!-- Male -->
+
+                        <label class="gender-option">
+
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Male"
+                                required
+                            >
+
+                            <span class="custom-radio"></span>
+
+                            <span>
+                                Male
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- Female -->
+
+                        <label class="gender-option">
+
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Female"
+                            >
+
+                            <span class="custom-radio"></span>
+
+                            <span>
+                                Female
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- Other -->
+
+                        <label class="gender-option">
+
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Other"
+                            >
+
+                            <span class="custom-radio"></span>
+
+                            <span>
+                                Other
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     5. PHONE NUMBER
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            5. Phone Number
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-phone"></i>
+
+
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     6. EMAIL
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            6. Email
+                        </strong>
+
+                        <span>
+                            (Optional)
+                        </span>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     7. EMERGENCY CONTACT
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            7. Emergency Contact
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-phone-volume"></i>
+
+
+                        <input
+                            type="tel"
+                            name="emergency_contact"
+                            placeholder="Enter emergency contact number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     8. ADDRESS
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            8. Address
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+
+                        <input
+                            type="text"
+                            name="address"
+                            placeholder="Enter your address"
+                            autocomplete="street-address"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     9. CREATE PASSWORD
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            9. Create Password
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+
+                        <i class="fa-regular fa-eye input-end-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     10. CONFIRM PASSWORD
+                     ================================================= -->
+
+                <div class="signup-form-group">
+
+                    <label>
+
+                        <strong>
+                            10. Confirm Password
+                        </strong>
+
+                    </label>
+
+
+                    <div class="signup-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+
+                        <input
+                            type="password"
+                            name="confirm_password"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+
+                        <i class="fa-regular fa-eye input-end-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CREATE ACCOUNT
+                     ================================================= -->
+
+                <button
+                    type="submit"
+                    class="create-account-button"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <span>
+                        Create Account
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =================================================
+                 LOGIN
+                 ================================================= -->
+
+            <div class="signup-login">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="{{ url_for('patient_login') }}">
+                    Login
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =================================================
+         BOTTOM FEATURES
+         ================================================= -->
+
+    <section class="features signup-features">
+
+
+        <!-- Queue -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <strong>
+                    Queue Status
+                </strong>
+
+                <span>
+                    Live Token Updates
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Prescriptions -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <strong>
+                    Prescriptions
+                </strong>
+
+                <span>
+                    View History
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Appointments -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <strong>
+                    Appointments
+                </strong>
+
+                <span>
+                    Reminders
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Emergency -->
+
+        <div class="feature">
+
+            <div class="feature-icon emergency">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <span class="phone-plus">
+                    +
+                </span>
+
+            </div>
+
+            <div class="feature-content">
+
+                <strong>
+                    Emergency
+                </strong>
+
+                <span>
+                    Contacts
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Language -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-globe"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <strong>
+                    English / తెలుగు
+                </strong>
+
+                <span>
+                    Language Switch
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+</body>
+
+</html>

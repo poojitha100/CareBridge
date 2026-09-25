@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareBridge - Book Appointment</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='appointment.css') }}"
+    >
+</head>
+
+<body class="appointment-page">
+
+    <!-- BACKGROUND OVERLAY -->
+    <div class="appointment-background">
+
+        <!-- HEADER -->
+        <header class="appointment-topbar">
+
+            <div class="appointment-brand">
+
+                <div class="appointment-logo">
+                    <svg viewBox="0 0 100 100" aria-hidden="true">
+
+                        <path
+                            d="M50 88 C44 82 16 61 10 43
+                               C4 25 15 9 32 9
+                               C41 9 47 14 50 21
+                               C53 14 59 9 68 9
+                               C85 9 96 25 90 43
+                               C84 61 56 82 50 88Z"
+                            fill="#35a447"
+                        />
+
+                        <path
+                            d="M55 30 H65 V40 H75 V50 H65 V60 H55 V50 H45 V40 H55 Z"
+                            fill="#ffffff"
+                        />
+
+                    </svg>
+                </div>
+
+                <div>
+                    <h2>CareBridge</h2>
+                    <span>Hospital Portal</span>
+                </div>
+
+            </div>
+
+
+            <div class="appointment-topbar-right">
+
+                <span>
+                    <i class="fa-solid fa-globe"></i>
+                    English / తెలుగు
+                </span>
+
+                <button type="button">
+                    <i class="fa-regular fa-bell"></i>
+                    <b>3</b>
+                </button>
+
+                <div class="top-profile">
+                    <span class="profile-circle">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+
+                    <strong>{{ patient_name }}</strong>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="appointment-main">
+
+            <section class="appointment-card">
+
+                <!-- HEADER -->
+                <div class="appointment-card-header">
+
+                    <div class="appointment-title">
+
+                        <div class="title-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <h1>BOOK APPOINTMENT</h1>
+
+                    </div>
+
+                    <a
+                        href="{{ url_for('patient_dashboard', patient_id=patient_id) }}"
+                        class="close-button"
+                        aria-label="Close"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- PATIENT DETAILS -->
+                <div class="patient-details-box">
+
+                    <div class="patient-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="patient-details">
+
+                        <div class="detail-item">
+
+                            <span>Patient Name</span>
+
+                            <strong>
+                                {{ patient_name }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Patient ID</span>
+
+                            <strong>
+                                {{ patient_id }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="patient-decoration">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                        <span>+</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+                <div class="appointment-divider"></div>
+
+
+                <!-- BOOKING SECTION -->
+                <div class="booking-section">
+
+                    <div class="booking-heading">
+
+                        <div class="booking-heading-icon">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+
+                        <h2>APPOINTMENT BOOKING</h2>
+
+                    </div>
+
+
+                    <div class="booking-time-box">
+
+                        <div class="clock-icon">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+
+                        <div class="booking-time-text">
+
+                            <span>
+                                Booking available
+                            </span>
+
+                            <strong>
+                                6:00 AM – 4:30 PM
+                            </strong>
+
+                        </div>
+
+
+                        <div class="calendar-decoration">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <div class="calendar-check">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM BUTTON -->
+                <form
+                    method="POST"
+                    action="{{ url_for('confirm_appointment') }}"
+                    class="confirm-form"
+                >
+
+                    <input
+                        type="hidden"
+                        name="patient_id"
+                        value="{{ patient_id }}"
+                    >
+
+                    <button
+                        type="submit"
+                        class="confirm-appointment-button"
+                    >
+
+                        <span class="confirm-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+
+                        <span>
+                            CONFIRM APPOINTMENT
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,3421 @@
+/* =========================================================
+   CAREBRIDGE HOSPITAL PORTAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf3fa;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.carebridge-page {
+    position: relative;
+
+    width: min(100%, 1728px);
+    aspect-ratio: 1728 / 1080;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 0 0 22px 22px;
+}
+
+
+/* =========================================================
+   ILLUSTRATION
+   ========================================================= */
+
+.main-illustration {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    display: block;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 18px 6.2% 0;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+}
+
+
+/* =========================================================
+   BRAND LOGO
+   ========================================================= */
+
+.brand-logo {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+/* =========================================================
+   HEART-SHAPED MEDICAL LOGO
+   ========================================================= */
+
+.brand-logo svg {
+    width: 68px;
+    height: 68px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   REMOVE EXTRA GREEN CIRCLE
+   ========================================================= */
+
+.brand-logo::before {
+    content: none;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.brand-info {
+    padding-top: 1px;
+}
+
+.brand-info h2 {
+    font-size: clamp(25px, 2vw, 34px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #35852f;
+
+    white-space: nowrap;
+}
+
+.brand-info p {
+    margin-top: 8px;
+
+    font-size: clamp(15px, 1.25vw, 21px);
+
+    line-height: 1;
+
+    color: #222222;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TRUSTED
+   ========================================================= */
+
+.trusted {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 4px;
+
+    font-size: clamp(15px, 1.25vw, 21px);
+
+    color: #333333;
+
+    white-space: nowrap;
+}
+
+
+/* Shield */
+
+.shield-icon {
+    position: relative;
+
+    width: 24px;
+    height: 27px;
+
+    border: 3px solid #315d29;
+
+    border-radius: 7px 7px 10px 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-icon::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -5px;
+
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    background: #ffffff;
+
+    border-right: 3px solid #315d29;
+    border-bottom: 3px solid #315d29;
+
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.shield-icon span {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #315d29;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-content {
+    position: absolute;
+
+    left: 7.45%;
+    top: 19%;
+
+    z-index: 8;
+}
+
+
+/* Welcome */
+
+.welcome {
+    font-size: clamp(25px, 2.1vw, 36px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #202020;
+
+    margin-bottom: 8px;
+}
+
+
+/* Main heading */
+
+.hero-content h1 {
+    margin: 0;
+
+    font-size: clamp(60px, 5.3vw, 91px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+}
+
+.hero-content h1 .care {
+    color: #151515;
+}
+
+.hero-content h1 .bridge {
+    color: #35852f;
+}
+
+
+/* Subtitle */
+
+.hero-content h2 {
+    margin-top: 22px;
+
+    font-size: clamp(23px, 1.8vw, 31px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+
+    color: #303030;
+}
+
+
+/* Green line */
+
+.green-line {
+    width: 82px;
+    height: 4px;
+
+    margin-top: 27px;
+
+    background: #35852f;
+
+    border-radius: 5px;
+}
+
+
+/* Description */
+
+.description {
+    margin-top: 50px;
+
+    font-size: clamp(16px, 1.3vw, 22px);
+
+    line-height: 1.8;
+
+    color: #3e3e3e;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+    display: flex;
+
+    gap: 18px;
+
+    margin-top: 47px;
+}
+
+
+/* Common button */
+
+.buttons a {
+    width: 260px; 
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Login */
+
+.login-button {
+    background: #3b9634;
+
+    color: #ffffff;
+
+    box-shadow: 0 8px 16px rgba(53, 133, 47, 0.18);
+}
+
+
+/* Sign up */
+
+.signup-button {
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #35852f;
+
+    border: 1.5px solid #35852f;
+}
+
+
+/* Button icon */
+
+.button-icon {
+    font-size: 16px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 13.7%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    align-items: center;
+
+    z-index: 9;
+
+    padding: 0 3.3%;
+}
+
+
+/* Feature */
+
+.feature {
+    height: 52%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    position: relative;
+}
+
+
+/* Divider */
+
+.feature:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 10%;
+
+    height: 80%;
+
+    width: 2px;
+
+    background: #d8ead2;
+}
+
+
+/* =========================================================
+   FEATURE ICONS
+   ========================================================= */
+
+.feature-icon {
+    width: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #358f32;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+   ========================================================= */
+
+.feature-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.feature strong {
+    font-size: clamp(14px, 1.15vw, 20px);
+
+    line-height: 1.3;
+
+    color: #222222;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.feature span {
+    margin-top: 7px;
+
+    font-size: clamp(12px, 1vw, 17px);
+
+    line-height: 1.2;
+
+    color: #555555;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .hero-content {
+        left: 4%;
+    }
+
+    .buttons a {
+        width: 180px;
+    }
+
+    .features {
+        padding: 0 2%;
+    }
+
+    .feature {
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .carebridge-page {
+        aspect-ratio: auto;
+
+        min-height: 900px;
+    }
+
+    .header {
+        padding-top: 15px;
+    }
+
+    .brand-logo {
+        width: 48px;
+        height: 57px;
+    }
+
+    .brand-logo::before {
+        width: 48px;
+        height: 48px;
+
+        top: 3px;
+        left: 5px;
+    }
+
+    .medical-cross {
+        transform: rotate(45deg) scale(0.75);
+
+        top: 14px;
+        left: 14px;
+    }
+
+    .trusted {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        top: 18%;
+        left: 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    .buttons a {
+        width: 150px;
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+    .features {
+        height: 15%;
+    }
+
+    .feature {
+        gap: 5px;
+    }
+
+    .feature-icon {
+        font-size: 25px;
+
+        width: 30px;
+    }
+
+    .feature strong {
+        font-size: 10px;
+    }
+
+    .feature span {
+        font-size: 8px;
+    }
+}
+
+
+/*===========================================================
+                   ICONS KOSAM 
+
+============================================================= */
+
+.feature-icon {
+    position: relative;
+
+    width: 54px;
+    min-width: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #35852f;
+
+    font-size: 34px;
+}
+
+.feature-icon i {
+    font-size: 32px;
+}
+
+.phone-plus {
+    position: absolute;
+
+    top: 1px;
+    right: 5px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #35852f;
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CAREBRIDGE SIGN UP PAGE
+   ========================================================= */
+
+.signup-page {
+    min-height: 100vh;
+    width: 100%;
+    background:
+        radial-gradient(circle at 8% 20%, rgba(210, 240, 220, 0.55), transparent 24%),
+        radial-gradient(circle at 92% 15%, rgba(215, 235, 250, 0.65), transparent 26%),
+        linear-gradient(135deg, #f7fcf8 0%, #eef8f5 48%, #f5fafc 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+
+
+/* =========================================================
+   SIGN UP HEADER
+   ========================================================= */
+
+.signup-page .signup-header {
+    width: 100%;
+    height: 105px;
+    padding: 24px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Brand */
+
+.signup-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup-page .brand-logo {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.signup-page .brand-logo svg {
+    width: 58px;
+    height: 58px;
+    display: block;
+    overflow: visible;
+}
+
+.signup-page .brand-info {
+    padding-top: 1px;
+}
+
+.signup-page .brand-info h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 700;
+    color: #35852f;
+    white-space: nowrap;
+}
+
+.signup-page .brand-info p {
+    margin: 7px 0 0;
+    font-size: 15px;
+    line-height: 1;
+    color: #333333;
+    white-space: nowrap;
+}
+
+
+/* Trusted text */
+
+.signup-page .trusted {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #35852f;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.signup-page .trusted i {
+    font-size: 19px;
+    color: #358f32;
+}
+
+
+/* =========================================================
+   MAIN SIGN UP AREA
+   ========================================================= */
+
+.signup-page .signup-main {
+    min-height: calc(100vh - 105px - 125px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 20px 155px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Decorative background circles */
+
+.signup-page .signup-main::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(190, 226, 201, 0.18);
+    left: -180px;
+    top: 60px;
+    z-index: -1;
+}
+
+.signup-page .signup-main::after {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: rgba(188, 218, 240, 0.18);
+    right: -140px;
+    bottom: 20px;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   SIGN UP CARD
+   ========================================================= */
+
+.signup-page .signup-card {
+    width: min(720px, 94%);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(207, 229, 216, 0.9);
+    border-radius: 22px;
+    padding: 30px 42px 27px;
+    box-shadow:
+        0 18px 45px rgba(46, 105, 72, 0.10),
+        0 4px 12px rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.signup-page .signup-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.signup-page .signup-title-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #e9f6e9;
+    color: #358f32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.signup-page .signup-card-header h1 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #222222;
+}
+
+.signup-page .signup-card-header h1 span {
+    color: #358f32;
+}
+
+.signup-page .signup-card-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #777777;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.signup-page .signup-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 17px;
+}
+
+.signup-page .signup-form-group {
+    width: 100%;
+}
+
+
+/* Make Patient ID span full width */
+
+.signup-page .signup-form-group:first-child {
+    grid-column: 1 / -1;
+}
+
+
+/* Labels */
+
+.signup-page .signup-form-group > label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+.signup-page .signup-form-group > label strong {
+    font-weight: 700;
+}
+
+.signup-page .signup-form-group > label > span {
+    color: #888888;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+
+/* =========================================================
+   INPUT BOX
+   ========================================================= */
+
+.signup-page .signup-input {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    background: #fbfdfc;
+    border: 1.5px solid #d5e5da;
+    border-radius: 9px;
+    padding: 0 13px;
+    transition: 0.2s ease;
+}
+
+.signup-page .signup-input:focus-within {
+    border-color: #63a95c;
+    box-shadow: 0 0 0 3px rgba(99, 169, 92, 0.10);
+    background: #ffffff;
+}
+
+.signup-page .signup-input > i:first-child {
+    width: 22px;
+    margin-right: 10px;
+    color: #5a9a54;
+    font-size: 15px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.signup-page .signup-input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup-page .signup-input input::placeholder {
+    color: #a0a0a0;
+}
+
+.signup-page .signup-input input:read-only {
+    color: #555555;
+    cursor: default;
+}
+
+
+/* Right-side icons */
+
+.signup-page .signup-input .input-end-icon {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 0;
+    color: #8ca28f;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GENDER
+   ========================================================= */
+
+.signup-page .gender-options {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.signup-page .gender-option {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444444;
+}
+
+.signup-page .gender-option input {
+    display: none;
+}
+
+.signup-page .custom-radio {
+    width: 17px;
+    height: 17px;
+    border: 1.5px solid #9ab49e;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background: #ffffff;
+}
+
+.signup-page .gender-option input:checked + .custom-radio {
+    border-color: #4c9847;
+}
+
+.signup-page .gender-option input:checked + .custom-radio::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #4c9847;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+   ========================================================= */
+
+.signup-page .create-account-button {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 48px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 9px;
+    background: #3b9634;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 7px 15px rgba(53, 133, 47, 0.16);
+    transition: 0.2s ease;
+}
+
+.signup-page .create-account-button:hover {
+    background: #32852d;
+    transform: translateY(-1px);
+    box-shadow: 0 9px 18px rgba(53, 133, 47, 0.20);
+}
+
+.signup-page .create-account-button i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+   ========================================================= */
+
+.signup-page .signup-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 17px;
+    font-size: 13px;
+    color: #777777;
+}
+
+.signup-page .signup-login a {
+    color: #358f32;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.signup-page .signup-login a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BOTTOM FEATURES
+   ========================================================= */
+
+.signup-page .signup-features {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 125px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    z-index: 9;
+    padding: 0 3.3%;
+    background: rgba(255, 255, 255, 0.72);
+    border-top: 1px solid rgba(205, 226, 211, 0.8);
+}
+
+.signup-page .signup-features .feature {
+    height: 52%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+}
+
+.signup-page .signup-features .feature:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background: #d8ead2;
+}
+
+.signup-page .signup-features .feature-icon {
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #358f32;
+    font-size: 34px;
+    line-height: 1;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.signup-page .signup-features .feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-page .signup-features .feature strong {
+    font-size: 15px;
+    line-height: 1.3;
+    color: #222222;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.signup-page .signup-features .feature span {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #555555;
+    white-space: nowrap;
+}
+
+
+/* Emergency + symbol */
+
+.signup-page .signup-features .emergency {
+    position: relative;
+}
+
+.signup-page .signup-features .phone-plus {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 800;
+    color: #358f32;
+    right: 3px;
+    top: 1px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .signup-page .signup-header {
+        padding: 20px 4%;
+    }
+
+    .signup-page .trusted {
+        font-size: 14px;
+    }
+
+    .signup-page .signup-card {
+        width: min(680px, 95%);
+        padding: 27px 30px 25px;
+    }
+
+    .signup-page .signup-features .feature {
+        gap: 10px;
+    }
+
+    .signup-page .signup-features .feature strong {
+        font-size: 13px;
+    }
+
+    .signup-page .signup-features .feature span {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .signup-page {
+        overflow-y: auto;
+    }
+
+    .signup-page .signup-header {
+        height: auto;
+        padding: 18px 20px;
+    }
+
+    .signup-page .brand-logo,
+    .signup-page .brand-logo svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .signup-page .brand-info h2 {
+        font-size: 24px;
+    }
+
+    .signup-page .brand-info p {
+        font-size: 13px;
+    }
+
+    .signup-page .trusted {
+        display: none;
+    }
+
+    .signup-page .signup-main {
+        min-height: auto;
+        padding: 10px 15px 150px;
+    }
+
+    .signup-page .signup-card {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 17px;
+    }
+
+    .signup-page .signup-card-header {
+        justify-content: flex-start;
+    }
+
+    .signup-page .signup-card-header h1 {
+        font-size: 23px;
+    }
+
+    .signup-page .signup-form {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .signup-page .signup-form-group:first-child {
+        grid-column: auto;
+    }
+
+    .signup-page .create-account-button {
+        grid-column: auto;
+    }
+
+    .signup-page .signup-features {
+        height: 105px;
+        overflow-x: auto;
+        grid-template-columns: repeat(5, minmax(150px, 1fr));
+        padding: 0 10px;
+    }
+
+    .signup-page .signup-features .feature {
+        gap: 8px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .signup-page .brand {
+        gap: 9px;
+    }
+
+    .signup-page .brand-info h2 {
+        font-size: 21px;
+    }
+
+    .signup-page .brand-info p {
+        font-size: 12px;
+    }
+
+    .signup-page .signup-card {
+        padding: 22px 16px;
+    }
+
+    .signup-page .signup-card-header {
+        gap: 11px;
+    }
+
+    .signup-page .signup-title-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .signup-page .signup-card-header h1 {
+        font-size: 21px;
+    }
+
+    .signup-page .gender-options {
+        gap: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CAREBRIDGE - ACCOUNT CREATED SUCCESS PAGE
+   CLEAN VERSION - NO DUPLICATES
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE RESET
+   ========================================================= */
+
+body.success-page {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #172b34;
+
+    background:
+        radial-gradient(
+            circle at 8% 30%,
+            rgba(214, 239, 205, 0.58),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 68%,
+            rgba(216, 240, 207, 0.58),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f9fcf7 0%,
+            #edf8e9 100%
+        );
+}
+
+
+body.success-page *,
+body.success-page *::before,
+body.success-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.success-page .success-header {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: 105px;
+
+    margin: 0 !important;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #e3eee0;
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* BRAND */
+
+.success-page .success-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.success-page .success-logo {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.success-page .success-logo svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+.success-page .success-brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+
+.success-page .success-brand-text div {
+    color: #358f32;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.success-page .success-brand-text span {
+    margin-top: 7px;
+
+    color: #263a45;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* TRUSTED */
+
+.success-page .success-trusted {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #26333b;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.success-page .success-trusted i {
+    color: #17394f;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   BACKGROUND CIRCLES
+   ========================================================= */
+
+.success-page .success-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.success-page .decoration-one {
+    width: 340px;
+    height: 340px;
+
+    left: -170px;
+    top: 305px;
+
+    background: rgba(217, 240, 209, 0.42);
+}
+
+
+.success-page .decoration-two {
+    width: 390px;
+    height: 390px;
+
+    right: -195px;
+    bottom: 20px;
+
+    background: rgba(219, 241, 212, 0.45);
+}
+
+
+/* =========================================================
+   BACKGROUND PLUS SIGNS
+   ========================================================= */
+
+.success-page .success-plus {
+    position: absolute;
+
+    color: rgba(72, 157, 66, 0.14);
+
+    font-size: 54px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.success-page .plus-one {
+    left: 7%;
+    top: 22%;
+}
+
+
+.success-page .plus-two {
+    right: 13%;
+    top: 25%;
+}
+
+
+.success-page .plus-three {
+    right: 19%;
+    top: 43%;
+}
+
+
+.success-page .plus-four {
+    left: 15%;
+    top: 59%;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.success-page .success-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: calc(100vh - 105px);
+
+    margin: 0 !important;
+
+    padding: 46px 20px 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+   ========================================================= */
+
+.success-page .success-card {
+    width: 760px;
+    max-width: calc(100vw - 40px);
+
+    margin: 0 auto !important;
+
+    padding: 40px 58px 32px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(57, 94, 50, 0.10);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 6;
+}
+
+
+/* =========================================================
+   SUCCESS ICON AREA
+   ========================================================= */
+
+.success-page .success-icon-area {
+    width: 125px;
+    height: 125px;
+
+    margin: 0 auto 14px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* OUTER GREEN CIRCLE */
+
+.success-page .success-icon {
+    width: 108px;
+    height: 108px;
+
+    border-radius: 50%;
+
+    background: #eaf6e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.success-page .success-icon-inner {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    background: #3b9b35;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 10px rgba(59, 155, 53, 0.12);
+}
+
+
+.success-page .success-icon-inner i {
+    color: #ffffff;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TICK MARK DOTS
+   ========================================================= */
+
+.success-page .success-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #83c978;
+
+    position: absolute;
+
+    z-index: 3;
+}
+
+
+.success-page .dot-one {
+    top: 7px;
+    left: 36px;
+
+    width: 7px;
+    height: 7px;
+}
+
+
+.success-page .dot-two {
+    top: 20px;
+    right: 15px;
+
+    width: 9px;
+    height: 9px;
+}
+
+
+.success-page .dot-three {
+    top: 47px;
+    right: 5px;
+
+    width: 7px;
+    height: 7px;
+}
+
+
+.success-page .dot-four {
+    bottom: 18px;
+    right: 17px;
+
+    width: 8px;
+    height: 8px;
+}
+
+
+.success-page .dot-five {
+    bottom: 7px;
+    left: 47px;
+
+    width: 8px;
+    height: 8px;
+}
+
+
+.success-page .dot-six {
+    top: 49px;
+    left: 5px;
+
+    width: 7px;
+    height: 7px;
+}
+
+
+.success-page .dot-seven {
+    top: 24px;
+    left: 18px;
+
+    width: 6px;
+    height: 6px;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.success-page .success-card h1 {
+    margin: 0;
+
+    color: #173b43;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+
+.success-page .success-subtitle {
+    margin: 12px 0 28px;
+
+    color: #53677b;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PATIENT ID BOX
+   ========================================================= */
+
+.success-page .patient-id-box {
+    width: 100%;
+    min-height: 112px;
+
+    margin: 0 0 34px;
+
+    padding: 17px 24px;
+
+    display: flex;
+    align-items: center;
+
+    text-align: left;
+
+    background: #f3faef;
+
+    border: 1px solid #e0eedb;
+
+    border-radius: 13px;
+}
+
+
+/* ID ICON */
+
+.success-page .patient-id-icon {
+    width: 72px;
+    height: 72px;
+
+    margin-right: 24px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 2px solid #d8ead2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.success-page .patient-id-icon i {
+    color: #3b9b35;
+
+    font-size: 34px;
+}
+
+
+/* ID CONTENT */
+
+.success-page .patient-id-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.success-page .patient-id-content span {
+    color: #42586a;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+
+.success-page .patient-id-content strong {
+    color: #3b9b35;
+
+    font-size: 27px;
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    margin-bottom: 3px;
+}
+
+
+.success-page .patient-id-content p {
+    margin: 0;
+
+    color: #61758a;
+
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   WHAT'S NEXT
+   ========================================================= */
+
+.success-page .success-next {
+    width: 100%;
+}
+
+
+.success-page .success-next h2 {
+    margin: 0 0 20px;
+
+    color: #173b43;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+/* OPTIONS */
+
+.success-page .next-options {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #e2ebe0;
+    border-bottom: 1px solid #e2ebe0;
+
+    margin-bottom: 26px;
+}
+
+
+.success-page .next-option {
+    min-width: 0;
+
+    min-height: 140px;
+
+    padding: 18px 10px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.success-page .next-option:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 20px;
+
+    width: 1px;
+    height: 98px;
+
+    background: #d9e7d6;
+}
+
+
+/* OPTION ICON */
+
+.success-page .next-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #edf8e8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #3b9b35;
+
+    font-size: 25px;
+}
+
+
+.success-page .next-option strong {
+    color: #172d38;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+
+.success-page .next-option span {
+    margin-top: 6px;
+
+    color: #617287;
+
+    font-size: 11.5px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.success-page .success-buttons {
+    width: 320px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.success-page .success-login-button,
+.success-page .success-home-button {
+    width: 100%;
+    height: 52px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+
+/* LOGIN */
+
+.success-page .success-login-button {
+    color: #ffffff;
+
+    background: #39a52f;
+
+    border: 2px solid #39a52f;
+
+    box-shadow:
+        0 5px 13px rgba(59, 155, 53, 0.18);
+}
+
+
+.success-page .success-login-button:hover {
+    background: #318e29;
+
+    border-color: #318e29;
+}
+
+
+/* HOME */
+
+.success-page .success-home-button {
+    color: #3b9b35;
+
+    background: #ffffff;
+
+    border: 2px solid #43a63b;
+}
+
+
+.success-page .success-home-button:hover {
+    background: #f4faef;
+}
+
+
+.success-page .success-login-button i,
+.success-page .success-home-button i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   SUPPORT
+   ========================================================= */
+
+.success-page .success-support {
+    margin-top: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #617287;
+
+    font-size: 14px;
+}
+
+
+.success-page .success-support i {
+    margin-right: 5px;
+
+    color: #60758a;
+
+    font-size: 18px;
+}
+
+
+.success-page .success-support span {
+    color: #617287;
+}
+
+
+.success-page .success-support a {
+    color: #32952d;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.success-page .success-support a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   HOSPITAL ART - LEFT BOTTOM
+   ========================================================= */
+
+.success-page .success-hospital-art {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 330px;
+    height: 270px;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* GROUND */
+
+.success-page .hospital-ground {
+    position: absolute;
+
+    left: -30px;
+    bottom: -25px;
+
+    width: 390px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #d8efcf;
+}
+
+
+/* MAIN BUILDING */
+
+.success-page .hospital-building {
+    position: absolute;
+
+    left: 34px;
+    bottom: 28px;
+
+    width: 245px;
+    height: 185px;
+}
+
+
+/* MAIN BUILDING */
+
+.success-page .hospital-main-building {
+    position: absolute;
+
+    left: 42px;
+    bottom: 0;
+
+    width: 145px;
+    height: 160px;
+
+    background: #eaf7e6;
+
+    border: 2px solid #c8e6c0;
+
+    border-bottom: none;
+}
+
+
+/* ROOF */
+
+.success-page .hospital-roof {
+    position: absolute;
+
+    left: 68px;
+    bottom: 160px;
+
+    width: 145px;
+    height: 10px;
+
+    background: #9bd28d;
+
+    transform: skewX(-20deg);
+}
+
+
+/* SIDE BUILDINGS */
+
+.success-page .hospital-side {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 50px;
+    height: 105px;
+
+    background: #eff9ed;
+
+    border: 2px solid #cce8c5;
+}
+
+
+.success-page .side-left {
+    left: 0;
+}
+
+
+.success-page .side-right {
+    right: 0;
+}
+
+
+/* CROSS */
+
+.success-page .hospital-cross {
+    position: absolute;
+
+    top: 18px;
+    left: 51px;
+
+    width: 43px;
+    height: 43px;
+}
+
+
+.success-page .hospital-cross span:first-child {
+    position: absolute;
+
+    left: 15px;
+    top: 0;
+
+    width: 14px;
+    height: 43px;
+
+    background: #4bae43;
+
+    border-radius: 3px;
+}
+
+
+.success-page .hospital-cross span:last-child {
+    position: absolute;
+
+    left: 0;
+    top: 15px;
+
+    width: 43px;
+    height: 14px;
+
+    background: #4bae43;
+
+    border-radius: 3px;
+}
+
+
+/* WINDOWS */
+
+.success-page .hospital-window {
+    position: absolute;
+
+    width: 23px;
+    height: 29px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent 45%,
+            #ffffff 45%,
+            #ffffff 55%,
+            transparent 55%
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 45%,
+            #ffffff 45%,
+            #ffffff 55%,
+            transparent 55%
+        ),
+        #9fd78f;
+
+    border: 2px solid #8bc97e;
+}
+
+
+.success-page .window-one {
+    left: 17px;
+    top: 78px;
+}
+
+
+.success-page .window-two {
+    right: 17px;
+    top: 78px;
+}
+
+
+.success-page .window-three {
+    left: 17px;
+    top: 118px;
+}
+
+
+.success-page .window-four {
+    right: 17px;
+    top: 118px;
+}
+
+
+.success-page .window-five {
+    left: -73px;
+    bottom: 38px;
+}
+
+
+.success-page .window-six {
+    right: -73px;
+    bottom: 38px;
+}
+
+
+/* DOOR */
+
+.success-page .hospital-door {
+    position: absolute;
+
+    left: 54px;
+    bottom: 0;
+
+    width: 38px;
+    height: 55px;
+
+    background: #7fc876;
+
+    border-radius: 5px 5px 0 0;
+}
+
+
+.success-page .hospital-door span {
+    position: absolute;
+
+    left: 50%;
+    bottom: -17px;
+
+    transform: translateX(-50%);
+
+    color: #ffffff;
+
+    background: #74bf6b;
+
+    padding: 2px 5px;
+
+    border-radius: 3px;
+
+    font-size: 6px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* TREES */
+
+.success-page .hospital-tree {
+    position: absolute;
+
+    bottom: 25px;
+
+    width: 36px;
+    height: 70px;
+}
+
+
+.success-page .hospital-tree::before {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 0;
+
+    width: 7px;
+    height: 42px;
+
+    background: #91ca83;
+
+    border-radius: 5px;
+}
+
+
+.success-page .hospital-tree::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 36px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #b6dda9;
+
+    box-shadow:
+        10px -9px 0 #a8d69b,
+        20px 4px 0 #b6dda9;
+}
+
+
+.success-page .tree-one {
+    left: 10px;
+}
+
+
+.success-page .tree-two {
+    right: 4px;
+}
+
+
+/* =========================================================
+   MEDICAL ART - RIGHT BOTTOM
+   ========================================================= */
+
+.success-page .success-medical-art {
+    position: absolute;
+
+    right: 15px;
+    bottom: 0;
+
+    width: 300px;
+    height: 300px;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* SHIELD */
+
+.success-page .medical-shield {
+    position: absolute;
+
+    right: 72px;
+    bottom: 25px;
+
+    width: 105px;
+    height: 125px;
+
+    background: #4caf45;
+
+    clip-path: polygon(
+        50% 0%,
+        92% 18%,
+        86% 65%,
+        50% 100%,
+        14% 65%,
+        8% 18%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 15px rgba(64, 135, 59, 0.12);
+}
+
+
+.success-page .medical-shield i {
+    color: #ffffff;
+
+    font-size: 48px;
+}
+
+
+/* LEAVES */
+
+.success-page .medical-leaf {
+    position: absolute;
+
+    width: 44px;
+    height: 22px;
+
+    background: #8bcf80;
+
+    border-radius: 100% 0 100% 0;
+}
+
+
+.success-page .leaf-one {
+    right: 180px;
+    bottom: 88px;
+
+    transform: rotate(-42deg);
+}
+
+
+.success-page .leaf-two {
+    right: 185px;
+    bottom: 130px;
+
+    transform: rotate(-65deg);
+}
+
+
+.success-page .leaf-three {
+    right: 35px;
+    bottom: 92px;
+
+    transform: rotate(35deg);
+}
+
+
+.success-page .leaf-four {
+    right: 26px;
+    bottom: 142px;
+
+    transform: rotate(58deg);
+}
+
+
+.success-page .leaf-five {
+    right: 150px;
+    bottom: 175px;
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .success-page .success-header {
+        padding: 0 28px;
+    }
+
+    .success-page .success-card {
+        width: 720px;
+
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .success-page .success-hospital-art {
+        opacity: 0.65;
+        transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    .success-page .success-medical-art {
+        opacity: 0.65;
+        transform: scale(0.8);
+        transform-origin: bottom right;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .success-page .success-header {
+        height: 85px;
+
+        padding: 0 18px;
+    }
+
+    .success-page .success-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .success-page .success-brand-text div {
+        font-size: 22px;
+    }
+
+    .success-page .success-brand-text span {
+        font-size: 14px;
+    }
+
+    .success-page .success-trusted {
+        font-size: 12px;
+    }
+
+    .success-page .success-trusted i {
+        font-size: 16px;
+    }
+
+    .success-page .success-main {
+        min-height: calc(100vh - 85px);
+
+        padding: 25px 14px 45px;
+    }
+
+    .success-page .success-card {
+        width: 100%;
+        max-width: 560px;
+
+        padding: 32px 22px 28px;
+
+        border-radius: 20px;
+    }
+
+    .success-page .success-card h1 {
+        font-size: 25px;
+    }
+
+    .success-page .success-subtitle {
+        font-size: 14px;
+    }
+
+    .success-page .patient-id-box {
+        padding: 15px;
+    }
+
+    .success-page .patient-id-icon {
+        width: 60px;
+        height: 60px;
+
+        margin-right: 15px;
+    }
+
+    .success-page .patient-id-icon i {
+        font-size: 28px;
+    }
+
+    .success-page .next-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .success-page .next-option:nth-child(2)::after {
+        display: none;
+    }
+
+    .success-page .next-option:nth-child(-n+2) {
+        border-bottom: 1px solid #d9e7d6;
+    }
+
+    .success-page .success-hospital-art,
+    .success-page .success-medical-art {
+        opacity: 0.35;
+        transform: scale(0.65);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .success-page .success-header {
+        height: 76px;
+    }
+
+    .success-page .success-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .success-page .success-brand {
+        gap: 7px;
+    }
+
+    .success-page .success-brand-text div {
+        font-size: 19px;
+    }
+
+    .success-page .success-brand-text span {
+        font-size: 12px;
+    }
+
+    .success-page .success-trusted span {
+        display: none;
+    }
+
+    .success-page .success-main {
+        padding: 18px 10px 35px;
+    }
+
+    .success-page .success-card {
+        max-width: 100%;
+
+        padding: 26px 15px 25px;
+    }
+
+    .success-page .success-icon-area {
+        transform: scale(0.88);
+
+        margin-bottom: 5px;
+    }
+
+    .success-page .success-card h1 {
+        font-size: 22px;
+    }
+
+    .success-page .success-subtitle {
+        font-size: 13px;
+    }
+
+    .success-page .patient-id-content strong {
+        font-size: 23px;
+    }
+
+    .success-page .next-option {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .success-page .next-option strong {
+        font-size: 12px;
+    }
+
+    .success-page .next-option span {
+        font-size: 10px;
+    }
+
+    .success-page .success-buttons {
+        width: 100%;
+    }
+
+    .success-page .success-hospital-art,
+    .success-page .success-medical-art {
+        display: none;
+    }
+}
+
+
+
+
+
+/* =========================================================
+   PATIENT LOGIN PAGE
+   ========================================================= */
+
+.patient-login-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at 8% 20%,
+            rgba(216, 242, 211, 0.65) 0,
+            rgba(216, 242, 211, 0) 28%),
+        radial-gradient(circle at 95% 85%,
+            rgba(218, 243, 214, 0.7) 0,
+            rgba(218, 243, 214, 0) 25%),
+        linear-gradient(135deg, #f7fcf6, #ffffff);
+
+    color: #18334a;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.login-header {
+    width: 100%;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5.5%;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid #edf3eb;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Brand */
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-brand-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-brand-logo svg {
+    width: 50px;
+    height: 50px;
+}
+
+.login-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.login-brand-text strong {
+    font-size: 26px;
+    color: #278c3b;
+    font-weight: 750;
+}
+
+.login-brand-text span {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #18334a;
+    font-weight: 600;
+}
+
+
+/* Trusted */
+
+.login-trusted {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #18334a;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.login-trusted i {
+    color: #18334a;
+    font-size: 19px;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN
+   --------------------------------------------------------- */
+
+.login-main {
+    min-height: calc(100vh - 92px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 20px;
+
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative background circles */
+
+.login-main::before {
+    content: "";
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background: rgba(220, 244, 216, 0.55);
+
+    left: -180px;
+    top: 70px;
+}
+
+.login-main::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(228, 247, 224, 0.6);
+
+    right: -150px;
+    bottom: -80px;
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN CARD
+   --------------------------------------------------------- */
+
+.login-card {
+    width: 430px;
+    max-width: 100%;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e4eee1;
+
+    border-radius: 18px;
+
+    padding: 28px 32px 25px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 12px 35px rgba(55, 105, 55, 0.10),
+        0 3px 10px rgba(30, 60, 30, 0.04);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   USER ICON
+   --------------------------------------------------------- */
+
+.login-user-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf7e8;
+
+    color: #35983c;
+
+    font-size: 23px;
+}
+
+.login-card h1 {
+    margin: 0;
+
+    text-align: center;
+
+    color: #18334a;
+
+    font-size: 25px;
+    font-weight: 750;
+}
+
+.login-subtitle {
+    margin: 7px auto 20px;
+
+    max-width: 340px;
+
+    text-align: center;
+
+    color: #65778a;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/* ---------------------------------------------------------
+   FLASH MESSAGES
+   --------------------------------------------------------- */
+
+.login-messages {
+    margin-bottom: 15px;
+}
+
+.login-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 11px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+}
+
+.login-message.error {
+    background: #fff1f1;
+    border: 1px solid #f2cccc;
+    color: #b52d2d;
+}
+
+.login-message.success {
+    background: #effaf0;
+    border: 1px solid #cce8cf;
+    color: #278238;
+}
+
+
+/* ---------------------------------------------------------
+   FORM
+   --------------------------------------------------------- */
+
+.patient-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Field */
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-field label {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #425f75;
+}
+
+
+/* Input */
+
+.login-input-box {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #d5e5d3;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+
+    overflow: hidden;
+}
+
+.login-input-box i {
+    width: 42px;
+
+    display: flex;
+    justify-content: center;
+
+    color: #3b9639;
+
+    font-size: 15px;
+}
+
+.login-input-box input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 12px 0 0;
+
+    font-size: 13px;
+
+    color: #263f52;
+}
+
+.login-input-box input::placeholder {
+    color: #a7b7c6;
+}
+
+.login-input-box:focus-within {
+    border-color: #3b9639;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 150, 57, 0.10);
+}
+
+
+/* Date input */
+
+.login-input-box input[type="date"] {
+    padding-right: 10px;
+
+    color: #7890a2;
+}
+
+.login-input-box input[type="date"]:valid {
+    color: #263f52;
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN BUTTON
+   --------------------------------------------------------- */
+
+.login-submit-button {
+    width: 100%;
+    height: 46px;
+
+    margin-top: 2px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #39a53b;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    box-shadow:
+        0 5px 12px rgba(57, 165, 59, 0.18);
+}
+
+.login-submit-button:hover {
+    background: #2f9332;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 15px rgba(57, 165, 59, 0.22);
+}
+
+.login-submit-button:active {
+    transform: translateY(0);
+}
+
+.login-submit-button i {
+    font-size: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   DIVIDER
+   --------------------------------------------------------- */
+
+.login-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 17px 0 12px;
+
+    color: #8b9aa8;
+
+    font-size: 11px;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e4ebe3;
+}
+
+
+/* ---------------------------------------------------------
+   CREATE ACCOUNT
+   --------------------------------------------------------- */
+
+.create-account-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 11px;
+
+    color: #637586;
+}
+
+.create-account-text a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #258b3a;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.create-account-text a:hover {
+    text-decoration: underline;
+}
+
+.create-account-text a i {
+    font-size: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   HELP BOX
+   --------------------------------------------------------- */
+
+.login-help {
+    margin-top: 18px;
+
+    padding: 11px 12px;
+
+    border-radius: 9px;
+
+    background: #f1f9ef;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.login-help-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcefd9;
+
+    color: #278d3a;
+
+    font-size: 13px;
+}
+
+.login-help div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.login-help strong {
+    font-size: 11px;
+
+    color: #267f35;
+}
+
+.login-help span {
+    font-size: 10px;
+
+    color: #65796b;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    .login-header {
+        height: 75px;
+
+        padding: 0 20px;
+    }
+
+    .login-brand-logo {
+        width: 43px;
+        height: 43px;
+    }
+
+    .login-brand-logo svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .login-brand-text strong {
+        font-size: 21px;
+    }
+
+    .login-brand-text span {
+        font-size: 11px;
+    }
+
+    .login-trusted {
+        display: none;
+    }
+
+    .login-main {
+        min-height: calc(100vh - 75px);
+
+        padding: 30px 16px;
+    }
+
+    .login-card {
+        padding: 25px 22px 22px;
+
+        border-radius: 15px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .login-brand-text strong {
+        font-size: 19px;
+    }
+
+    .login-brand-text span {
+        font-size: 10px;
+    }
+
+    .login-card {
+        padding: 23px 18px 20px;
+    }
+
+    .login-card h1 {
+        font-size: 23px;
+    }
+}

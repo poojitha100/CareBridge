@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareBridge Hospital Portal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<div class="carebridge-page">
+
+    <!-- Hospital Illustration -->
+    <img
+        src="{{ url_for('static', filename='hospital-illustration.png') }}"
+        alt="Hospital Illustration"
+        class="main-illustration"
+    >
+
+    <!-- Header -->
+    <header class="header">
+
+        <!-- Brand -->
+        <div class="brand">
+
+            <div class="brand-logo">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+
+                    <!-- Heart -->
+                    <path
+                        d="M50 88
+                           C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#3b9b35"
+                    />
+
+                    <!-- Medical Plus -->
+                    <path
+                        d="M55 30
+                           H65
+                           V40
+                           H75
+                           V50
+                           H65
+                           V60
+                           H55
+                           V50
+                           H45
+                           V40
+                           H55
+                           Z"
+                        fill="#3b9b35"
+                        stroke="#ffffff"
+                        stroke-width="3"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+            </div>
+
+            <div class="brand-info">
+                <h2>CareBridge</h2>
+                <p>Hospital Portal</p>
+            </div>
+
+        </div>
+
+        <!-- Trusted Message -->
+        <div class="trusted">
+
+            <div class="shield-icon">
+                <span>✓</span>
+            </div>
+
+            <span>Trusted. Secure. Connected.</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Hero Section -->
+    <main class="hero-content">
+
+        <p class="welcome">
+            Welcome to
+        </p>
+
+        <h1>
+            <span class="care">Care</span><span class="bridge">Bridge</span>
+        </h1>
+
+        <h2>
+            Your Smart Hospital Companion
+        </h2>
+
+        <div class="green-line"></div>
+
+        <p class="description">
+            <br>Access your medical information, track your queue status,</br>
+            manage appointments and stay updated – all in one place.
+        </p>
+
+
+        <!-- Login / Signup Buttons -->
+        <div class="buttons">
+
+            <a
+                href="{{ url_for('patient_login') }}"
+                class="login-button"
+            >
+                <span class="button-icon">♟</span>
+                <span>Login</span>
+            </a>
+
+
+            <a
+                href="{{ url_for('signup') }}"
+                class="signup-button"
+            >
+                <span class="button-icon">♟</span>
+                <span>Sign Up</span>
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Features Section -->
+    <section class="features">
+
+        <!-- Queue Status -->
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="feature-content">
+                <strong>Queue Status</strong>
+                <span>Live Token Updates</span>
+            </div>
+
+        </div>
+
+
+        <!-- Prescriptions -->
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+
+            <div class="feature-content">
+                <strong>Prescriptions</strong>
+                <span>View History</span>
+            </div>
+
+        </div>
+
+
+        <!-- Appointments -->
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="feature-content">
+                <strong>Appointments</strong>
+                <span>Reminders</span>
+            </div>
+
+        </div>
+
+
+        <!-- Emergency -->
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <span class="phone-plus">
+                    +
+                </span>
+
+            </div>
+
+            <div class="feature-content">
+                <strong>Emergency</strong>
+                <span>Contacts</span>
+            </div>
+
+        </div>
+
+
+        <!-- Language -->
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+
+            <div class="feature-content">
+                <strong>English / తెలుగు</strong>
+                <span>Language Switch</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>

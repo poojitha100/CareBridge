@@ -1,0 +1,784 @@
+/* =========================================================
+   CAREBRIDGE - BOOK APPOINTMENT
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body.appointment-page {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #124d57;
+    background: #edf7f3;
+    overflow-x: hidden;
+}
+
+.appointment-page a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.appointment-background {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(205, 239, 216, 0.65),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(203, 235, 211, 0.55),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f4faf7 0%,
+            #e8f5f0 100%
+        );
+
+    position: relative;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.appointment-topbar {
+    height: 80px;
+
+    width: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-bottom:
+        1px solid #dce9e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* BRAND */
+
+.appointment-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.appointment-logo {
+    width: 58px;
+    height: 58px;
+}
+
+.appointment-logo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.appointment-brand h2 {
+    color: #168448;
+    font-size: 24px;
+    line-height: 1.05;
+    font-weight: 750;
+}
+
+.appointment-brand span {
+    display: block;
+    margin-top: 4px;
+    color: #174e5b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* TOP RIGHT */
+
+.appointment-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.appointment-topbar-right > span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #174c58;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.appointment-topbar-right > span i {
+    color: #075b6b;
+    font-size: 21px;
+}
+
+.appointment-topbar-right > button {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+    border: 1px solid #deebe4;
+
+    background: #ffffff;
+
+    color: #07566a;
+
+    font-size: 20px;
+
+    position: relative;
+}
+
+.appointment-topbar-right > button b {
+    position: absolute;
+
+    top: -4px;
+    right: -1px;
+
+    min-width: 19px;
+    height: 19px;
+
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    background: #198d43;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+}
+
+
+/* PROFILE */
+
+.top-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 7px 13px 7px 8px;
+
+    border-radius: 30px;
+
+    background: #eff8ed;
+    border: 1px solid #d4e7d3;
+
+    color: #173f47;
+
+    font-size: 14px;
+}
+
+.profile-circle {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 50%;
+
+    background: #dcefdc;
+    color: #2b9845;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.top-profile > i {
+    color: #1e5d59;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.appointment-main {
+    min-height:
+        calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        34px 20px 45px;
+}
+
+
+/* =========================================================
+   APPOINTMENT CARD
+========================================================= */
+
+.appointment-card {
+    width: min(900px, 100%);
+
+    background: #ffffff;
+
+    border-radius: 19px;
+
+    padding:
+        28px 35px 40px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(36, 94, 71, 0.13);
+
+    border:
+        1px solid #e0ebe4;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.appointment-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.appointment-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-icon {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e7f7e7,
+            #effaf1
+        );
+
+    color: #29954b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+}
+
+.appointment-title h1 {
+    color: #075443;
+
+    font-size: 31px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+}
+
+.close-button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #08733f;
+
+    font-size: 27px;
+
+    transition:
+        background 0.2s ease;
+}
+
+.close-button:hover {
+    background: #edf8ef;
+}
+
+
+/* =========================================================
+   PATIENT DETAILS
+========================================================= */
+
+.patient-details-box {
+    min-height: 168px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid #d8ece0;
+
+    background:
+        linear-gradient(
+            110deg,
+            #eef9f2,
+            #f5fbf5
+        );
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        24px 27px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.patient-icon {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e0f3e3,
+            #d8efdc
+        );
+
+    border:
+        1px solid #cbe7d0;
+
+    color: #2c9a43;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 43px;
+
+    flex-shrink: 0;
+}
+
+.patient-details {
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item span {
+    color: #4a748b;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+.detail-item strong {
+    color: #104e5e;
+
+    font-size: 24px;
+
+    font-weight: 750;
+}
+
+.patient-decoration {
+    position: absolute;
+
+    right: 30px;
+    top: 23px;
+
+    width: 145px;
+    height: 120px;
+
+    opacity: 0.15;
+
+    color: #4aaa63;
+
+    font-size: 105px;
+}
+
+.patient-decoration span {
+    position: absolute;
+
+    top: 37px;
+    left: 63px;
+
+    color: #4aaa63;
+
+    font-size: 38px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.appointment-divider {
+    height: 1px;
+
+    width: 100%;
+
+    background: #c9deda;
+
+    margin:
+        27px 0 22px;
+}
+
+
+/* =========================================================
+   BOOKING HEADING
+========================================================= */
+
+.booking-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+.booking-heading-icon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e5f6e7,
+            #effaf0
+        );
+
+    color: #24954a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 31px;
+}
+
+.booking-heading h2 {
+    color: #09603f;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   BOOKING TIME BOX
+========================================================= */
+
+.booking-time-box {
+    min-height: 134px;
+
+    border-radius: 17px;
+
+    border:
+        1px solid #d2e9d7;
+
+    background:
+        linear-gradient(
+            105deg,
+            #effaf2,
+            #f4fbf5
+        );
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        20px 25px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.clock-icon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid #cde8d2;
+
+    background: #f7fcf8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #188e45;
+
+    font-size: 28px;
+
+    flex-shrink: 0;
+}
+
+.booking-time-text {
+    margin-left: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.booking-time-text span {
+    color: #159246;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.booking-time-text strong {
+    color: #104e61;
+
+    font-size: 27px;
+
+    font-weight: 750;
+}
+
+.calendar-decoration {
+    position: absolute;
+
+    right: 50px;
+    top: 18px;
+
+    color: #75c99b;
+
+    opacity: 0.42;
+
+    font-size: 82px;
+}
+
+.calendar-check {
+    position: absolute;
+
+    right: -3px;
+    bottom: -1px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #54b86e;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+========================================================= */
+
+.confirm-form {
+    margin-top: 28px;
+}
+
+.confirm-appointment-button {
+    width: 100%;
+    height: 88px;
+
+    border: 0;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #2ca34b,
+            #199542
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 23px
+        rgba(36, 147, 66, 0.21);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.confirm-appointment-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(36, 147, 66, 0.28);
+}
+
+.confirm-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #20994a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .appointment-topbar {
+        padding: 0 16px;
+    }
+
+    .appointment-topbar-right {
+        gap: 8px;
+    }
+
+    .appointment-topbar-right > span {
+        display: none;
+    }
+
+    .top-profile strong,
+    .top-profile > i {
+        display: none;
+    }
+
+    .top-profile {
+        padding: 5px;
+    }
+
+    .appointment-main {
+        padding:
+            18px 12px 30px;
+    }
+
+    .appointment-card {
+        padding:
+            22px 18px 27px;
+    }
+
+    .appointment-title h1 {
+        font-size: 23px;
+    }
+
+    .patient-details-box {
+        padding: 20px;
+    }
+
+    .patient-icon {
+        width: 78px;
+        height: 78px;
+        font-size: 31px;
+    }
+
+    .patient-details {
+        margin-left: 18px;
+    }
+
+    .detail-item span {
+        font-size: 14px;
+    }
+
+    .detail-item strong {
+        font-size: 20px;
+    }
+
+    .patient-decoration {
+        display: none;
+    }
+
+    .booking-heading h2 {
+        font-size: 19px;
+    }
+
+    .booking-time-text strong {
+        font-size: 22px;
+    }
+
+    .calendar-decoration {
+        right: 20px;
+        opacity: 0.22;
+    }
+
+    .confirm-appointment-button {
+        height: 76px;
+        font-size: 18px;
+    }
+}

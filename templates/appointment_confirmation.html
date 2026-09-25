@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CareBridge | Appointment Booked</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Confirmation Page CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='appointment_confirmation.css') }}"
+    >
+</head>
+
+
+<body class="confirmation-page">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="patient-sidebar">
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+
+                <svg
+                    viewBox="0 0 100 100"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M50 88
+                           C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#35a447"
+                    />
+
+                    <path
+                        d="M55 30
+                           H65 V40
+                           H75 V50
+                           H65 V60
+                           H55 V50
+                           H45 V40
+                           H55 Z"
+                        fill="#ffffff"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <div class="sidebar-brand-text">
+
+                <h2>CareBridge</h2>
+
+                <span>
+                    Hospital Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-navigation">
+
+            <a
+                href="{{ url_for('patient_dashboard', patient_id=patient_id) }}"
+                class="sidebar-nav-item active"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-file-prescription"></i>
+                <span>Prescriptions</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Hospital Navigation</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-phone"></i>
+                <span>Emergency Contacts</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-nav-item"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="sidebar-nav-item logout-item"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+
+        <!-- HELP -->
+
+        <div class="sidebar-help">
+
+            <div class="help-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Need Help?</h3>
+
+            <p>
+                We're here to assist you.
+            </p>
+
+            <button type="button">
+                Contact Support
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+         ===================================================== -->
+
+    <main class="confirmation-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="confirmation-topbar">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <div class="topbar-right">
+
+                <div class="language">
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>
+                        English / తెలుగు
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+
+                <div class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-count">
+                        3
+                    </span>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <span>
+                        {{ patient_name }}
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             BACKGROUND DECORATION
+             ================================================= -->
+
+        <div class="background-decoration">
+
+            <div class="leaf leaf-one"></div>
+            <div class="leaf leaf-two"></div>
+            <div class="leaf leaf-three"></div>
+
+            <div class="hospital-illustration">
+
+                <div class="hospital-roof"></div>
+
+                <div class="hospital-building">
+
+                    <div class="hospital-sign">
+
+                        <div class="hospital-plus">
+                            +
+                        </div>
+
+                        <span>
+                            HOSPITAL
+                        </span>
+
+                    </div>
+
+                    <div class="hospital-door"></div>
+
+                    <div class="hospital-window window-one"></div>
+                    <div class="hospital-window window-two"></div>
+                    <div class="hospital-window window-three"></div>
+                    <div class="hospital-window window-four"></div>
+
+                </div>
+
+                <div class="hospital-tree tree-one"></div>
+                <div class="hospital-tree tree-two"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SUCCESS CARD
+             ================================================= -->
+
+        <section class="success-card">
+
+
+            <!-- SUCCESS ICON -->
+
+            <div class="success-icon-wrapper">
+
+                <div class="success-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TITLE -->
+
+            <div class="success-title">
+
+                <h1>
+                    APPOINTMENT BOOKED
+                </h1>
+
+                <div class="title-check">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+            </div>
+
+
+
+            <!-- BOOKING NUMBER BOX -->
+
+            <div class="booking-box">
+
+                <h2>
+                    YOUR BOOKING NUMBER
+                </h2>
+
+
+                <div class="booking-number-wrapper">
+
+                    <span class="booking-decoration left">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+
+                    <div class="booking-number">
+
+                        {{ booking_number }}
+
+                    </div>
+
+
+                    <span class="booking-decoration right">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="booking-info">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-info"></i>
+                    </div>
+
+                    <p>
+                        Please show this number
+                        <br>
+                        at OP Reception
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GO TO HOME -->
+
+            <a
+                href="{{ url_for('patient_dashboard', patient_id=patient_id) }}"
+                class="home-button"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Go to Patient Home
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR SCRIPT
+         ===================================================== -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const sidebar =
+            document.querySelector(".patient-sidebar");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle(
+                    "sidebar-open"
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

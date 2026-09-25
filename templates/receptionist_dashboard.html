@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CareBridge | Reception Dashboard</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='receptionist.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+
+                <svg
+                    viewBox="0 0 100 100"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M50 88
+                           C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#3b9b35"
+                    />
+
+                    <path
+                        d="M55 30 H65 V40 H75 V50
+                           H65 V60 H55 V50 H45 V40 H55 Z"
+                        fill="#3b9b35"
+                        stroke="#ffffff"
+                        stroke-width="3"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <div class="brand-name">
+                    CareBridge
+                </div>
+
+                <div class="brand-subtitle">
+                    Hospital Portal
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-action"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </button>
+
+
+            <div class="header-divider"></div>
+
+
+            <button
+                type="button"
+                class="header-action logout-button"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- ================= WELCOME BANNER ================= -->
+
+        <section class="welcome-banner">
+
+
+            <div class="welcome-content">
+
+                <h1>
+                    Welcome, Receptionist
+                    <span>👋</span>
+                </h1>
+
+                <p>
+                    Manage today's patient appointments and OP tokens.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= WELCOME DECORATION ================= -->
+
+            <div class="welcome-decoration">
+
+
+                <!-- Medical Cross -->
+
+                <div class="medical-cross">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+
+
+                <!-- Receptionist Illustration -->
+
+                <div class="receptionist-illustration">
+
+                    <svg
+                        viewBox="0 0 300 220"
+                        width="100%"
+                        height="100%"
+                        aria-hidden="true"
+                    >
+
+                        <!-- Soft background circle -->
+
+                        <circle
+                            cx="205"
+                            cy="100"
+                            r="82"
+                            fill="#eaf5ff"
+                            opacity="0.75"
+                        />
+
+
+                        <!-- Hair - back -->
+
+                        <path
+                            d="
+                                M168 76
+                                C165 48 181 25 207 25
+                                C237 25 251 49 247 80
+                                L243 126
+                                C240 148 225 160 207 160
+                                C184 160 169 143 166 119
+                                Z
+                            "
+                            fill="#193653"
+                        />
+
+
+                        <!-- Neck -->
+
+                        <rect
+                            x="198"
+                            y="105"
+                            width="22"
+                            height="32"
+                            rx="8"
+                            fill="#f4bfa9"
+                        />
+
+
+                        <!-- Face -->
+
+                        <ellipse
+                            cx="209"
+                            cy="91"
+                            rx="39"
+                            ry="46"
+                            fill="#ffd5c2"
+                        />
+
+
+                        <!-- Hair front -->
+
+                        <path
+                            d="
+                                M170 78
+                                C169 49 184 31 209 31
+                                C236 31 247 51 246 78
+                                C235 65 226 60 214 58
+                                C202 72 188 79 170 78
+                                Z
+                            "
+                            fill="#193653"
+                        />
+
+
+                        <!-- Side hair -->
+
+                        <path
+                            d="
+                                M171 71
+                                C163 91 166 119 177 132
+                                L185 128
+                                L182 83
+                                Z
+                            "
+                            fill="#193653"
+                        />
+
+                        <path
+                            d="
+                                M244 71
+                                C252 91 250 119 239 132
+                                L231 128
+                                L234 83
+                                Z
+                            "
+                            fill="#193653"
+                        />
+
+
+                        <!-- Eyes -->
+
+                        <ellipse
+                            cx="195"
+                            cy="91"
+                            rx="3"
+                            ry="4"
+                            fill="#193653"
+                        />
+
+                        <ellipse
+                            cx="223"
+                            cy="91"
+                            rx="3"
+                            ry="4"
+                            fill="#193653"
+                        />
+
+
+                        <!-- Nose -->
+
+                        <path
+                            d="M208 94 L205 103 L210 104"
+                            fill="none"
+                            stroke="#d58f7d"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Smile -->
+
+                        <path
+                            d="M199 111 Q209 119 219 111"
+                            fill="none"
+                            stroke="#b85f61"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                        />
+
+
+                        <!-- Body / Green uniform -->
+
+                        <path
+                            d="
+                                M178 133
+                                C159 137 145 151 139 181
+                                L135 220
+                                L276 220
+                                L272 181
+                                C268 151 254 137 236 133
+                                L219 139
+                                L207 153
+                                L195 139
+                                Z
+                            "
+                            fill="#20a66d"
+                        />
+
+
+                        <!-- White coat center -->
+
+                        <path
+                            d="
+                                M194 137
+                                L207 153
+                                L220 137
+                                L232 220
+                                L182 220
+                                Z
+                            "
+                            fill="#ffffff"
+                        />
+
+
+                        <!-- Shirt / neckline -->
+
+                        <path
+                            d="
+                                M194 137
+                                L207 153
+                                L220 137
+                                L216 129
+                                L207 139
+                                L198 129
+                                Z
+                            "
+                            fill="#dff5ec"
+                        />
+
+
+                        <!-- ID Card -->
+
+                        <rect
+                            x="221"
+                            y="157"
+                            width="27"
+                            height="35"
+                            rx="4"
+                            fill="#ffffff"
+                            stroke="#d4e7df"
+                            stroke-width="1.5"
+                        />
+
+                        <rect
+                            x="225"
+                            y="163"
+                            width="19"
+                            height="4"
+                            rx="2"
+                            fill="#20a66d"
+                        />
+
+                        <circle
+                            cx="234.5"
+                            cy="175"
+                            r="5"
+                            fill="#b9dced"
+                        />
+
+                        <rect
+                            x="226"
+                            y="184"
+                            width="17"
+                            height="3"
+                            rx="1.5"
+                            fill="#c7d7e5"
+                        />
+
+
+                        <!-- Laptop -->
+
+                        <rect
+                            x="58"
+                            y="132"
+                            width="143"
+                            height="78"
+                            rx="9"
+                            fill="#193653"
+                        />
+
+
+                        <!-- Laptop screen -->
+
+                        <rect
+                            x="67"
+                            y="141"
+                            width="125"
+                            height="60"
+                            rx="5"
+                            fill="#284965"
+                        />
+
+
+                        <!-- Screen reflection -->
+
+                        <path
+                            d="
+                                M75 149
+                                H151
+                                L183 190
+                                H75
+                                Z
+                            "
+                            fill="#345872"
+                            opacity="0.45"
+                        />
+
+
+                        <!-- Laptop camera -->
+
+                        <circle
+                            cx="129"
+                            cy="145"
+                            r="2"
+                            fill="#8ca9bd"
+                        />
+
+
+                        <!-- Laptop base -->
+
+                        <path
+                            d="
+                                M45 210
+                                H214
+                                L226 217
+                                H33
+                                Z
+                            "
+                            fill="#7894ae"
+                        />
+
+
+                        <!-- Small plant -->
+
+                        <path
+                            d="M268 178 V218"
+                            stroke="#6b9d72"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                        />
+
+                        <ellipse
+                            cx="257"
+                            cy="181"
+                            rx="10"
+                            ry="20"
+                            transform="rotate(-35 257 181)"
+                            fill="#75c9a1"
+                        />
+
+                        <ellipse
+                            cx="276"
+                            cy="175"
+                            rx="10"
+                            ry="20"
+                            transform="rotate(35 276 175)"
+                            fill="#75c9a1"
+                        />
+
+                        <ellipse
+                            cx="267"
+                            cy="162"
+                            rx="9"
+                            ry="18"
+                            transform="rotate(5 267 162)"
+                            fill="#8ad5ac"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+
+                <!-- Left Plant -->
+
+                <div class="plant plant-left">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Right Plant -->
+
+                <div class="plant plant-right">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Clock -->
+
+                <div class="clock">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                </div>
+
+
+
+                <!-- Banner Message -->
+
+                <div class="banner-message">
+
+                    Better<br>
+                    Care<br>
+                    Together
+
+                    <span>♡</span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-grid">
+
+
+            <!-- Today's Appointments -->
+
+            <div class="stat-card appointments-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-regular fa-calendar-days"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h3>
+                        Today's Appointments
+                    </h3>
+
+                    <strong id="appointmentCount">
+                        {{ today_count }}
+                    </strong>
+
+                </div>
+
+
+                <i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+            </div>
+
+
+
+            <!-- Verified -->
+
+            <div class="stat-card verified-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-shield-check"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h3>
+                        Verified
+                    </h3>
+
+                    <strong id="verifiedCount">
+                        {{ verified_count }}
+                    </strong>
+
+                </div>
+
+
+                <i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+            </div>
+
+
+
+            <!-- Tokens -->
+
+            <div class="stat-card tokens-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-ticket"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h3>
+                        Tokens Generated
+                    </h3>
+
+                    <strong id="tokenCount">
+                        {{ token_count }}
+                    </strong>
+
+                </div>
+
+
+                <i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="patientSearch"
+                    placeholder="Patient ID / Patient Name"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="search-button"
+                id="searchButton"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <span>Search</span>
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH RESULT ================= -->
+
+        <section
+            class="search-result-section"
+            id="searchResultSection"
+            style="display: none;"
+        >
+
+            <div class="section-heading">
+
+                <i class="fa-solid fa-user"></i>
+
+                <h2>Search Result</h2>
+
+            </div>
+
+
+            <div id="searchResultContent"></div>
+
+        </section>
+
+
+
+        <!-- ================= TODAY'S APPOINTMENTS ================= -->
+
+        <section class="appointments-section">
+
+
+            <div class="appointments-heading">
+
+
+                <div class="heading-left">
+
+                    <div class="heading-icon">
+
+                        <i class="fa-regular fa-calendar-days"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Today's Appointments
+                    </h2>
+
+                </div>
+
+
+
+                <div class="today-date">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span id="todayDate">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Table -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Patient ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Booking No.
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                            <th class="menu-column"></th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="appointmentsTableBody">
+
+
+                        {% if appointments %}
+
+
+                            {% for appointment in appointments %}
+
+                            <tr>
+
+                                <!-- Patient ID -->
+
+                                <td>
+                                    <strong>
+                                        {{ appointment[1] }}
+                                    </strong>
+                                </td>
+
+
+                                <!-- Patient Name -->
+
+                                <td>
+                                    {{ appointment[2] }}
+                                </td>
+
+
+                                <!-- Booking Number -->
+
+                                <td>
+
+                                    <span class="booking-number">
+
+                                        A{{ "%03d" | format(appointment[3]) }}
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- Status -->
+
+                                <td>
+
+                                    <span class="status-badge">
+
+                                        {{ appointment[4] }}
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- Action -->
+
+                                <td>
+
+                                    <a
+                                        href="{{ url_for(
+                                            'verify_patient',
+                                            appointment_id=appointment[0]
+                                        ) }}"
+                                        class="verify-button"
+                                    >
+
+                                        <i class="fa-solid fa-user-check"></i>
+
+                                        Verify
+
+                                    </a>
+
+                                </td>
+
+
+                                <!-- Menu -->
+
+                                <td class="menu-column">
+
+                                    <button
+                                        type="button"
+                                        class="row-menu-button"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+
+                        {% else %}
+
+
+                            <!-- Empty State -->
+
+                            <tr class="empty-row">
+
+                                <td colspan="6">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+
+                                            <i class="fa-regular fa-calendar-xmark"></i>
+
+                                        </div>
+
+
+                                        <h3>
+                                            No appointments booked yet
+                                        </h3>
+
+
+                                        <p>
+                                            Today's appointments will appear here
+                                            once patients book.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                        {% endif %}
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* --------------------------------
+           Today's Date
+        -------------------------------- */
+
+        function updateTodayDate() {
+
+            const dateElement =
+                document.getElementById("todayDate");
+
+            const today = new Date();
+
+            const options = {
+                weekday: "short",
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+            };
+
+            dateElement.textContent =
+                today.toLocaleDateString(
+                    "en-IN",
+                    options
+                );
+        }
+
+
+
+        /* --------------------------------
+           Search UI
+        -------------------------------- */
+
+        const searchButton =
+            document.getElementById("searchButton");
+
+        const patientSearch =
+            document.getElementById("patientSearch");
+
+        const searchResultSection =
+            document.getElementById("searchResultSection");
+
+        const searchResultContent =
+            document.getElementById("searchResultContent");
+
+
+
+        searchButton.addEventListener(
+            "click",
+            function () {
+
+                const searchValue =
+                    patientSearch.value.trim();
+
+                if (!searchValue) {
+
+                    patientSearch.focus();
+
+                    return;
+                }
+
+
+                /*
+                 * Search backend will be connected
+                 * in the next step.
+                 */
+
+                searchResultSection.style.display =
+                    "block";
+
+                searchResultContent.innerHTML = `
+
+                    <div class="search-placeholder">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <span>
+                            Search functionality will be connected
+                            to the patient database.
+                        </span>
+
+                    </div>
+
+                `;
+            }
+        );
+
+
+
+        /* --------------------------------
+           Enter Key Search
+        -------------------------------- */
+
+        patientSearch.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Enter") {
+
+                    searchButton.click();
+
+                }
+
+            }
+        );
+
+
+
+        /* --------------------------------
+           Initialize
+        -------------------------------- */
+
+        updateTodayDate();
+
+
+    </script>
+
+
+</body>
+
+</html>

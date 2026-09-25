@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareBridge - Patient Home</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='home.css') }}"
+    >
+</head>
+
+<body class="patient-home-page">
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- SIDEBAR -->
+    <aside
+        class="patient-sidebar"
+        id="patientSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+
+                    <path
+                        d="M50 88 C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#35a447"
+                    />
+
+                    <path
+                        d="M55 30 H65 V40 H75 V50 H65 V60 H55 V50 H45 V40 H55 Z"
+                        fill="#ffffff"
+                    />
+
+                </svg>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h2>CareBridge</h2>
+                <span>Hospital Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <a href="#" class="sidebar-nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-file-prescription"></i>
+                <span>Prescriptions</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Hospital Navigation</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>Emergency Contacts</span>
+            </a>
+
+            <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a
+                href="{{ url_for('home') }}"
+                class="sidebar-nav-item logout-item"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-help">
+
+            <div class="help-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Need Help?</h3>
+
+            <p>We're here to assist you.</p>
+
+            <button type="button">
+                Contact Support
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="patient-main">
+
+        <!-- TOP BAR -->
+        <header class="patient-topbar">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <div class="topbar-right">
+
+                <button
+                    type="button"
+                    class="language-button"
+                >
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>English / తెలుగు</span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    aria-label="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-count">
+                        3
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="profile-button"
+                >
+                    <span class="profile-circle">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+
+                    <strong>
+                        {{ patient_name }}
+                    </strong>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="patient-content">
+
+
+            <!-- WELCOME -->
+            <section class="welcome-banner">
+
+                <div class="welcome-content">
+
+                    <h1>
+                        Welcome,
+                        <span>{{ patient_name }}</span>!
+                    </h1>
+
+                    <p>
+                        Your health matters. We're here for you.
+                    </p>
+
+                    <div class="patient-id-badge">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <span>Patient ID:</span>
+
+                        <strong>{{ patient_id }}</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOSPITAL ILLUSTRATION -->
+                <div class="welcome-hospital">
+
+                    <div class="hospital-cloud cloud-one"></div>
+                    <div class="hospital-cloud cloud-two"></div>
+
+                    <div class="tree tree-one">
+                        <div class="tree-top"></div>
+                        <div class="tree-trunk"></div>
+                    </div>
+
+                    <div class="tree tree-two">
+                        <div class="tree-top"></div>
+                        <div class="tree-trunk"></div>
+                    </div>
+
+                    <div class="tree tree-three">
+                        <div class="tree-top"></div>
+                        <div class="tree-trunk"></div>
+                    </div>
+
+                    <div class="hospital-building">
+
+                        <div class="hospital-roof"></div>
+
+                        <div class="hospital-sign">
+
+                            <div class="hospital-cross">
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <strong>HOSPITAL</strong>
+
+                        </div>
+
+                        <div class="hospital-windows">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="hospital-door"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BOOK APPOINTMENT -->
+            <section class="appointment-banner">
+
+                <!-- LEFT ILLUSTRATION -->
+                <div class="appointment-illustration">
+
+                    <!-- Decorative leaves -->
+                    <div class="appointment-leaf leaf-one"></div>
+                    <div class="appointment-leaf leaf-two"></div>
+                    <div class="appointment-leaf leaf-three"></div>
+                    <div class="appointment-leaf leaf-four"></div>
+                    <div class="appointment-leaf leaf-five"></div>
+
+                    <!-- Calendar -->
+                    <div class="calendar-card">
+
+                        <div class="calendar-top"></div>
+
+                        <div class="calendar-rings">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="calendar-grid">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Stethoscope -->
+                    <div class="stethoscope-circle">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+
+
+                    <!-- Plus -->
+                    <div class="appointment-plus">
+                        +
+                    </div>
+
+                </div>
+
+
+                <!-- TEXT -->
+                <div class="appointment-content">
+
+                    <span class="appointment-label">
+                        BOOK AN APPOINTMENT
+                    </span>
+
+                    <h2>
+                        Schedule Your<br>
+                        Doctor Visit
+                    </h2>
+
+                    <p>
+                        Consult a doctor, get the right care<br>
+                        and stay healthy.
+                    </p>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <div class="appointment-action">
+
+                    <a
+                        href="{{ url_for('book_appointment', patient_id=patient_id) }}"
+                        class="book-appointment-button"
+                        id="bookAppointmentButton"
+                    >
+
+                        <span class="appointment-button-icon">
+                            <i class="fa-regular fa-calendar-plus"></i>
+                        </span>
+
+                        <span>
+                            Book Appointment
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- FEATURE CARDS -->
+            <section class="feature-grid">
+
+
+                <!-- TEST RESULTS -->
+                <article class="dashboard-card test-results-card">
+
+                    <div class="dashboard-card-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <h3>Test Results</h3>
+
+                    <p>
+                        View your test results
+                        and download reports.
+                    </p>
+
+                    <a href="#">
+                        View Results
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- VISIT HISTORY -->
+                <article class="dashboard-card visit-history-card">
+
+                    <div class="dashboard-card-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <h3>Visit History</h3>
+
+                    <p>
+                        View your previous visits
+                        and consultation history.
+                    </p>
+
+                    <a href="#">
+                        View History
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- EMERGENCY -->
+                <article class="dashboard-card emergency-card">
+
+                    <div class="dashboard-card-icon">
+                        <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+
+                    <h3>Emergency Contacts</h3>
+
+                    <p>
+                        Quick access to emergency
+                        numbers and support.
+                    </p>
+
+                    <a href="#">
+                        View Contacts
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- NAVIGATION -->
+                <article class="dashboard-card navigation-card">
+
+                    <div class="dashboard-card-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+
+                    <h3>Hospital Navigation</h3>
+
+                    <p>
+                        Find departments, blocks,
+                        floors and more.
+                    </p>
+
+                    <a href="#">
+                        View Map
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </section>
+
+
+           
+
+
+            <!-- QUICK SUPPORT -->
+            <section class="quick-support">
+
+                <div class="quick-support-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div class="quick-support-text">
+
+                    <h3>Quick Support</h3>
+
+                    <p>
+                        Need immediate assistance?
+                        Our team is available 24/7.
+                    </p>
+
+                </div>
+
+                <div class="support-number">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <span>
+                        040-1234 5678
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const patientSidebar =
+            document.getElementById("patientSidebar");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+        function openSidebar() {
+
+            patientSidebar.classList.add("sidebar-open");
+
+            sidebarOverlay.classList.add("overlay-visible");
+
+            menuButton.classList.add("menu-active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Close navigation"
+            );
+        }
+
+
+        function closeSidebar() {
+
+            patientSidebar.classList.remove("sidebar-open");
+
+            sidebarOverlay.classList.remove("overlay-visible");
+
+            menuButton.classList.remove("menu-active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+        }
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    patientSidebar.classList.contains(
+                        "sidebar-open"
+                    )
+                ) {
+
+                    closeSidebar();
+
+                } else {
+
+                    openSidebar();
+
+                }
+
+            }
+        );
+
+
+        sidebarOverlay.addEventListener(
+            "click",
+            function () {
+                closeSidebar();
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+                    closeSidebar();
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

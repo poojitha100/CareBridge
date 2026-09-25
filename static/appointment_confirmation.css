@@ -1,0 +1,1140 @@
+/* =========================================================
+   CAREBRIDGE APPOINTMENT CONFIRMATION
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    color: #084d70;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9fbff 0%,
+            #f5ffff 45%,
+            #eefcf5 100%
+        );
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.patient-sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 318px;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f6fff9
+        );
+
+    border-right: 1px solid #dcece5;
+
+    z-index: 50;
+
+    padding: 18px 17px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+   ========================================================= */
+
+.sidebar-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-left: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.sidebar-logo {
+    width: 67px;
+    height: 67px;
+
+    flex-shrink: 0;
+}
+
+
+.sidebar-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+.sidebar-brand-text h2 {
+    color: #12833c;
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.sidebar-brand-text span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #123f70;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.sidebar-navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.sidebar-nav-item {
+    min-height: 55px;
+
+    padding: 0 17px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    text-decoration: none;
+
+    color: #06496c;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.sidebar-nav-item i {
+    width: 29px;
+
+    text-align: center;
+
+    font-size: 24px;
+}
+
+
+.sidebar-nav-item:hover,
+.sidebar-nav-item.active {
+    background: #e2f6e8;
+
+    color: #087f39;
+
+    font-weight: 600;
+}
+
+
+.logout-item {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   HELP CARD
+   ========================================================= */
+
+.sidebar-help {
+    margin-top: auto;
+
+    padding: 18px 15px;
+
+    min-height: 190px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e7f9eb,
+            #effcf4
+        );
+
+    text-align: center;
+}
+
+
+.help-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #149144;
+
+    font-size: 43px;
+}
+
+
+.sidebar-help h3 {
+    color: #087e39;
+
+    font-size: 19px;
+
+    margin-top: 4px;
+}
+
+
+.sidebar-help p {
+    color: #356b83;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+
+.sidebar-help button {
+    margin-top: 13px;
+
+    width: 188px;
+    height: 43px;
+
+    border-radius: 9px;
+
+    border: 1.5px solid #0a9b49;
+
+    background: #ffffff;
+
+    color: #078a42;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.confirmation-main {
+    min-height: 100vh;
+
+    margin-left: 318px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.confirmation-topbar {
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+.menu-button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+
+.menu-button span {
+    width: 28px;
+    height: 3px;
+
+    border-radius: 5px;
+
+    background: #149348;
+}
+
+
+.topbar-right {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.language,
+.notification,
+.profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #124b70;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+.language i:first-child {
+    font-size: 24px;
+}
+
+
+.language i:last-child,
+.profile i:last-child {
+    font-size: 12px;
+}
+
+
+.notification {
+    position: relative;
+
+    font-size: 27px;
+}
+
+
+.notification-count {
+    position: absolute;
+
+    top: -8px;
+    right: -9px;
+
+    min-width: 21px;
+    height: 21px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #159642;
+
+    color: white;
+
+    font-size: 11px;
+}
+
+
+.profile {
+    padding: 8px 15px;
+
+    border-radius: 28px;
+
+    background: rgba(220, 247, 229, 0.72);
+
+    gap: 11px;
+}
+
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #d6f1dc;
+
+    color: #159642;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.background-decoration {
+    position: absolute;
+
+    inset: 80px 0 0 0;
+
+    pointer-events: none;
+}
+
+
+.background-decoration::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 0;
+
+    height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(190, 238, 247, 0.65),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(206, 243, 252, 0.8),
+            transparent 28%
+        );
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+   ========================================================= */
+
+.success-card {
+    width: min(820px, 78%);
+
+    min-height: 690px;
+
+    margin: 70px auto 80px;
+
+    padding:
+        30px 36px 38px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 18px 55px rgba(38, 105, 119, 0.12);
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+   ========================================================= */
+
+.success-icon-wrapper {
+    width: 174px;
+    height: 174px;
+
+    margin: -78px auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 3px 15px rgba(30, 130, 80, 0.04);
+}
+
+
+.success-icon {
+    width: 135px;
+    height: 135px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #effcf4,
+            #e2f8e9
+        );
+
+    border: 1px solid #ccebd6;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #0b8e42;
+
+    font-size: 67px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.success-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 5px;
+}
+
+
+.success-title h1 {
+    color: #07903e;
+
+    font-size: 43px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+.title-check {
+    width: 51px;
+    height: 51px;
+
+    border-radius: 50%;
+
+    background: #0b9545;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   BOOKING BOX
+   ========================================================= */
+
+.booking-box {
+    margin-top: 27px;
+
+    padding:
+        25px 30px 28px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2fcf5,
+            #e9faef
+        );
+
+    border: 1px solid #c7ead2;
+}
+
+
+.booking-box h2 {
+    color: #587b8b;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+.booking-number-wrapper {
+    margin: 16px auto 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.booking-number {
+    min-width: 460px;
+
+    padding: 7px 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8f4df,
+            #cdefd5
+        );
+
+    color: #00853a;
+
+    font-size: 88px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.booking-decoration {
+    color: #07913e;
+
+    font-size: 28px;
+}
+
+
+.booking-decoration.left {
+    transform: rotate(-35deg);
+}
+
+
+.booking-decoration.right {
+    transform: rotate(35deg);
+}
+
+
+.booking-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    color: #07576f;
+
+    text-align: left;
+}
+
+
+.info-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: #079544;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 25px;
+}
+
+
+.booking-info p {
+    font-size: 21px;
+
+    font-weight: 600;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   HOME BUTTON
+   ========================================================= */
+
+.home-button {
+    margin-top: 29px;
+
+    width: 100%;
+    height: 88px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22a746,
+            #07933f
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 7px 18px rgba(16, 145, 67, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.home-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 25px rgba(16, 145, 67, 0.22);
+}
+
+
+.home-button i:first-child {
+    font-size: 31px;
+}
+
+
+.home-button i:last-child {
+    font-size: 27px;
+
+    margin-left: 8px;
+}
+
+
+/* =========================================================
+   SIMPLE HOSPITAL ILLUSTRATION
+   ========================================================= */
+
+.hospital-illustration {
+    position: absolute;
+
+    right: 2%;
+
+    bottom: 22%;
+
+    width: 330px;
+    height: 300px;
+
+    opacity: 0.72;
+}
+
+
+.hospital-building {
+    position: absolute;
+
+    right: 25px;
+    bottom: 0;
+
+    width: 225px;
+    height: 225px;
+
+    background: rgba(255,255,255,0.75);
+
+    border: 3px solid rgba(119,194,219,0.32);
+}
+
+
+.hospital-roof {
+    position: absolute;
+
+    right: 22px;
+    bottom: 225px;
+
+    width: 240px;
+    height: 28px;
+
+    background: rgba(116,191,216,0.3);
+
+    transform: skewX(-28deg);
+}
+
+
+.hospital-sign {
+    position: absolute;
+
+    top: 30px;
+    left: 66px;
+
+    width: 95px;
+    height: 75px;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            #52bd89,
+            #079d62
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 7px;
+}
+
+
+.hospital-plus {
+    font-size: 34px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.hospital-sign span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.hospital-door {
+    position: absolute;
+
+    left: 91px;
+    bottom: 0;
+
+    width: 48px;
+    height: 76px;
+
+    background: #80c9e4;
+
+    border: 3px solid white;
+}
+
+
+.hospital-window {
+    position: absolute;
+
+    width: 30px;
+    height: 35px;
+
+    background: #bde9f7;
+
+    border: 3px solid white;
+}
+
+
+.window-one {
+    top: 125px;
+    left: 24px;
+}
+
+.window-two {
+    top: 125px;
+    right: 24px;
+}
+
+.window-three {
+    top: 175px;
+    left: 24px;
+}
+
+.window-four {
+    top: 175px;
+    right: 24px;
+}
+
+
+.hospital-tree {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 52px;
+    height: 70px;
+
+    border-radius: 50% 50% 40% 40%;
+
+    background: rgba(78, 190, 113, 0.42);
+}
+
+
+.tree-one {
+    left: 0;
+}
+
+.tree-two {
+    right: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .patient-sidebar {
+        width: 270px;
+    }
+
+    .confirmation-main {
+        margin-left: 270px;
+    }
+
+    .success-card {
+        width: 82%;
+    }
+
+    .booking-number {
+        min-width: 380px;
+
+        font-size: 72px;
+    }
+
+    .hospital-illustration {
+        opacity: 0.35;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .patient-sidebar {
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.3s ease;
+    }
+
+    .patient-sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .confirmation-main {
+        margin-left: 0;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .language {
+        display: none;
+    }
+
+    .topbar-right {
+        gap: 15px;
+    }
+
+    .success-card {
+        width: 90%;
+
+        margin-top: 80px;
+    }
+
+    .success-title h1 {
+        font-size: 33px;
+    }
+
+    .booking-number {
+        min-width: 300px;
+
+        font-size: 62px;
+    }
+
+    .booking-info p {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .confirmation-topbar {
+        padding: 0 15px;
+    }
+
+    .profile span,
+    .profile i:last-child {
+        display: none;
+    }
+
+    .success-card {
+        width: 94%;
+
+        padding:
+            25px 16px 25px;
+
+        min-height: auto;
+    }
+
+    .success-icon-wrapper {
+        width: 135px;
+        height: 135px;
+
+        margin-top: -65px;
+    }
+
+    .success-icon {
+        width: 105px;
+        height: 105px;
+
+        font-size: 52px;
+    }
+
+    .success-title {
+        gap: 10px;
+    }
+
+    .success-title h1 {
+        font-size: 25px;
+    }
+
+    .title-check {
+        width: 40px;
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+    .booking-box {
+        padding: 20px 10px;
+    }
+
+    .booking-box h2 {
+        font-size: 19px;
+    }
+
+    .booking-number-wrapper {
+        gap: 5px;
+    }
+
+    .booking-number {
+        min-width: 0;
+
+        width: 90%;
+
+        font-size: 47px;
+
+        padding: 9px 10px;
+    }
+
+    .booking-decoration {
+        display: none;
+    }
+
+    .booking-info {
+        gap: 10px;
+    }
+
+    .booking-info p {
+        font-size: 16px;
+    }
+
+    .home-button {
+        height: 68px;
+
+        font-size: 18px;
+
+        gap: 12px;
+    }
+
+    .home-button i:first-child {
+        font-size: 23px;
+    }
+
+    .home-button i:last-child {
+        font-size: 20px;
+    }
+
+    .hospital-illustration {
+        display: none;
+    }
+}

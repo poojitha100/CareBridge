@@ -1,0 +1,1378 @@
+/* =========================================================
+   CAREBRIDGE RECEPTIONIST DASHBOARD
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 95%,
+            rgba(220, 239, 255, 0.8),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 100%,
+            rgba(232, 225, 255, 0.85),
+            transparent 25%
+        ),
+        #ffffff;
+
+    min-height: 100vh;
+
+    color: #173b70;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.top-header {
+    width: 100%;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4.2%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-logo {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo svg {
+    width: 68px;
+    height: 68px;
+    display: block;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-name {
+    color: #16863e;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    line-height: 1.05;
+    letter-spacing: -0.7px;
+}
+
+.brand-subtitle {
+    color: #173b70;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-action {
+    border: none;
+    background: transparent;
+
+    color: #173b70;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    padding: 10px 6px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.header-action i {
+    font-size: 23px;
+}
+
+.header-action:hover {
+    color: #16863e;
+    transform: translateY(-1px);
+}
+
+.header-divider {
+    width: 1px;
+    height: 28px;
+
+    background: #d8e1ef;
+}
+
+.logout-button i {
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.dashboard-container {
+    width: 92%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   WELCOME BANNER
+   ========================================================= */
+
+.welcome-banner {
+    height: 183px;
+
+    border-radius: 15px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            105deg,
+            #f4f6ff 0%,
+            #f3f0ff 48%,
+            #eef4ff 100%
+        );
+
+    border: 1px solid #e6e9f8;
+
+    box-shadow:
+        0 5px 20px rgba(51, 75, 126, 0.05);
+}
+
+
+.welcome-content {
+    position: relative;
+    z-index: 4;
+
+    padding-left: 45px;
+    padding-top: 2px;
+}
+
+.welcome-content h1 {
+    color: #183d74;
+
+    font-size: 39px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.welcome-content h1 span {
+    font-size: 32px;
+    margin-left: 4px;
+}
+
+.welcome-content p {
+    margin-top: 12px;
+
+    color: #607aa7;
+
+    font-size: 21px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   BANNER DECORATION
+   ========================================================= */
+
+.welcome-decoration {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 48%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   MEDICAL CROSS
+   ========================================================= */
+
+.medical-cross {
+    position: absolute;
+
+    top: 54px;
+    left: 18%;
+
+    width: 68px;
+    height: 55px;
+
+    border: 7px solid rgba(116, 166, 236, 0.17);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medical-cross i {
+    color: rgba(88, 144, 225, 0.25);
+    font-size: 31px;
+}
+
+
+/* =========================================================
+   RECEPTIONIST ILLUSTRATION
+   IMPORTANT:
+   This section is changed to match the reference image.
+   ========================================================= */
+
+.receptionist-illustration {
+    position: absolute;
+
+    /*
+       Bigger than previous version.
+       Reference has a large receptionist + laptop.
+    */
+    width: 360px;
+    height: 205px;
+
+    /*
+       Places illustration towards the right side,
+       but keeps enough space for the message.
+    */
+    right: 8%;
+
+    /*
+       Keeps laptop sitting naturally on bottom edge.
+    */
+    bottom: -4px;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/*
+   SVG itself
+*/
+
+.receptionist-illustration svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CLOCK
+   ========================================================= */
+
+.clock {
+    position: absolute;
+
+    right: 24%;
+    top: 20px;
+
+    width: 53px;
+    height: 53px;
+
+    border-radius: 50%;
+
+    border: 6px solid rgba(84, 151, 231, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.clock i {
+    color: rgba(76, 140, 220, 0.3);
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   PLANTS
+   ========================================================= */
+
+.plant {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 58px;
+    height: 80px;
+
+    z-index: 3;
+}
+
+.plant span {
+    position: absolute;
+
+    display: block;
+
+    width: 21px;
+    height: 37px;
+
+    background: rgba(42, 170, 105, 0.45);
+
+    border-radius: 100% 0 100% 0;
+
+    transform-origin: bottom;
+}
+
+.plant span:nth-child(1) {
+    left: 4px;
+    bottom: 18px;
+
+    transform: rotate(-30deg);
+}
+
+.plant span:nth-child(2) {
+    left: 20px;
+    bottom: 32px;
+
+    transform: rotate(8deg);
+}
+
+.plant span:nth-child(3) {
+    left: 34px;
+    bottom: 14px;
+
+    transform: rotate(35deg);
+}
+
+.plant-left {
+    left: 10%;
+}
+
+.plant-right {
+    right: 7%;
+}
+
+
+/* =========================================================
+   BANNER MESSAGE
+   ========================================================= */
+
+.banner-message {
+    position: absolute;
+
+    right: 2%;
+    top: 52px;
+
+    color: #8671d5;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    transform: rotate(-7deg);
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.banner-message span {
+    display: block;
+
+    font-size: 28px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 23px;
+}
+
+.stat-card {
+    height: 132px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid;
+
+    padding: 0 28px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 67, 120, 0.08);
+}
+
+
+/* Appointment */
+
+.appointments-card {
+    background: #f7fffa;
+    border-color: #ccefdc;
+}
+
+.appointments-card .stat-icon {
+    color: #07964a;
+    background: #ddf8e7;
+}
+
+
+/* Verified */
+
+.verified-card {
+    background: #f8fbff;
+    border-color: #d1e4ff;
+}
+
+.verified-card .stat-icon {
+    color: #147fe9;
+    background: #e2f0ff;
+}
+
+
+/* Tokens */
+
+.tokens-card {
+    background: #fbf9ff;
+    border-color: #e6d8ff;
+}
+
+.tokens-card .stat-icon {
+    color: #6835cf;
+    background: #eee4ff;
+}
+
+
+.stat-icon {
+    width: 88px;
+    height: 88px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.stat-icon i {
+    font-size: 39px;
+}
+
+.stat-info {
+    margin-left: 25px;
+}
+
+.stat-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.appointments-card .stat-info h3 {
+    color: #087b3e;
+}
+
+.verified-card .stat-info h3 {
+    color: #0879e2;
+}
+
+.tokens-card .stat-info h3 {
+    color: #6832c8;
+}
+
+.stat-info strong {
+    display: block;
+
+    font-size: 41px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.appointments-card .stat-info strong {
+    color: #087b3e;
+}
+
+.verified-card .stat-info strong {
+    color: #173d72;
+}
+
+.tokens-card .stat-info strong {
+    color: #6832c8;
+}
+
+.stat-arrow {
+    position: absolute;
+
+    right: 28px;
+
+    font-size: 25px;
+}
+
+.appointments-card .stat-arrow {
+    color: #07964a;
+}
+
+.verified-card .stat-arrow {
+    color: #147fe9;
+}
+
+.tokens-card .stat-arrow {
+    color: #6835cf;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-section {
+    margin-top: 22px;
+
+    height: 72px;
+
+    display: flex;
+    gap: 12px;
+
+    padding: 0;
+
+    border: 1px solid #d5e2f9;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(44, 76, 128, 0.04);
+
+    overflow: hidden;
+}
+
+.search-box {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 35px;
+}
+
+.search-box i {
+    color: #476b9e;
+
+    font-size: 27px;
+
+    margin-right: 24px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 18px;
+
+    color: #173b70;
+
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #849ac0;
+    opacity: 1;
+}
+
+.search-button {
+    width: 160px;
+
+    margin: 4px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6330bd,
+            #6f37d2
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-button i {
+    font-size: 21px;
+}
+
+.search-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(102, 48, 190, 0.25);
+}
+
+
+/* =========================================================
+   SEARCH RESULT
+   ========================================================= */
+
+.search-result-section {
+    margin-top: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e8f6;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 4px 18px rgba(45, 74, 125, 0.04);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #183d74;
+}
+
+.section-heading i {
+    font-size: 23px;
+    color: #6835cf;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+}
+
+.search-placeholder {
+    margin-top: 18px;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    background: #fafaff;
+
+    color: #6f82a5;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   APPOINTMENTS SECTION
+   ========================================================= */
+
+.appointments-section {
+    margin-top: 22px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e4e9f7;
+
+    border-radius: 15px;
+
+    padding:
+        25px 25px 20px;
+
+    box-shadow:
+        0 5px 20px rgba(45, 74, 125, 0.05);
+}
+
+.appointments-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    padding: 0 5px;
+}
+
+.heading-left {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.heading-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6330bd;
+
+    font-size: 34px;
+}
+
+.heading-left h2 {
+    color: #183d74;
+
+    font-size: 26px;
+
+    font-weight: 750;
+}
+
+.today-date {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background: #f2edff;
+
+    color: #6435c6;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.today-date i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 800px;
+}
+
+thead tr {
+    height: 58px;
+
+    background: #f2f1fd;
+}
+
+thead th {
+    color: #183d74;
+
+    text-align: left;
+
+    padding: 0 30px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+thead th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+thead th.menu-column {
+    width: 45px;
+
+    border-radius: 0 12px 12px 0;
+}
+
+tbody tr {
+    height: 77px;
+
+    border-bottom: 1px solid #e8edf6;
+}
+
+tbody td {
+    padding: 0 30px;
+
+    color: #173b70;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 17px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.status-badge::before {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.status-booked {
+    color: #1388e9;
+    background: #e6f4ff;
+}
+
+.status-booked::before {
+    background: #1388e9;
+}
+
+.status-verified {
+    color: #15964a;
+    background: #e0f8e8;
+}
+
+.status-verified::before {
+    background: #15964a;
+}
+
+
+/* =========================================================
+   VERIFY BUTTON
+   ========================================================= */
+
+.verify-button {
+    min-width: 170px;
+
+    height: 46px;
+
+    border: 1.5px solid #0b9a4a;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #078b42;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.verify-button:hover {
+    background: #0b9a4a;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   OP TOKEN BUTTON
+   ========================================================= */
+
+.op-token-button {
+    min-width: 170px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #079747,
+            #0a9d4e
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   THREE DOT MENU
+   ========================================================= */
+
+.more-button {
+    border: none;
+
+    background: transparent;
+
+    color: #214c83;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    padding: 10px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-row {
+    height: 285px !important;
+}
+
+.empty-row td {
+    padding: 0 !important;
+
+    text-align: center;
+}
+
+.empty-state {
+    min-height: 270px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-icon {
+    width: 66px;
+    height: 66px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1edff;
+
+    color: #6c3bd0;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    color: #244778;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.empty-state p {
+    margin-top: 7px;
+
+    color: #8194b4;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-container {
+        width: 94%;
+    }
+
+    .welcome-decoration {
+        width: 48%;
+    }
+
+    /*
+       Smaller screens lo illustration konchem reduce.
+    */
+
+    .receptionist-illustration {
+        width: 310px;
+        height: 190px;
+
+        right: 5%;
+    }
+
+    .welcome-content h1 {
+        font-size: 33px;
+    }
+
+    .welcome-content p {
+        font-size: 18px;
+    }
+
+    .stats-grid {
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 0 18px;
+    }
+
+    .stat-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .stat-info {
+        margin-left: 16px;
+    }
+
+    .stat-info h3 {
+        font-size: 15px;
+    }
+
+    .stat-info strong {
+        font-size: 34px;
+    }
+
+    .stat-arrow {
+        right: 17px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .top-header {
+        height: auto;
+
+        min-height: 90px;
+
+        padding:
+            15px 4%;
+    }
+
+    .brand-name {
+        font-size: 25px;
+    }
+
+    .brand-subtitle {
+        font-size: 16px;
+    }
+
+    .brand-logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .brand-logo svg {
+        width: 56px;
+        height: 56px;
+    }
+
+    .header-action span {
+        display: none;
+    }
+
+    .header-divider {
+        display: none;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .welcome-banner {
+        height: 170px;
+    }
+
+    .welcome-content {
+        padding-left: 25px;
+        max-width: 60%;
+    }
+
+    .welcome-content h1 {
+        font-size: 28px;
+    }
+
+    .welcome-content p {
+        font-size: 15px;
+    }
+
+    .welcome-decoration {
+        width: 48%;
+    }
+
+    .receptionist-illustration {
+        width: 250px;
+        height: 170px;
+
+        right: 0;
+        bottom: -2px;
+    }
+
+    .medical-cross {
+        transform: scale(0.8);
+        transform-origin: top left;
+    }
+
+    .clock {
+        transform: scale(0.8);
+        transform-origin: top right;
+    }
+
+    .banner-message {
+        font-size: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        height: 110px;
+    }
+
+    .search-section {
+        height: 64px;
+    }
+
+    .search-button {
+        width: 120px;
+    }
+
+    .appointments-heading {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .dashboard-container {
+        width: 94%;
+    }
+
+    .brand-name {
+        font-size: 21px;
+    }
+
+    .brand-subtitle {
+        font-size: 14px;
+    }
+
+    .welcome-banner {
+        height: 160px;
+    }
+
+    .welcome-content {
+        max-width: 100%;
+
+        padding-right: 20px;
+    }
+
+    .welcome-content h1 {
+        font-size: 25px;
+    }
+
+    .welcome-content p {
+        font-size: 14px;
+    }
+
+    .welcome-decoration {
+        opacity: 0.22;
+    }
+
+    .receptionist-illustration {
+        width: 230px;
+        height: 155px;
+
+        right: -5px;
+    }
+
+    .search-section {
+        height: auto;
+
+        min-height: 62px;
+
+        flex-direction: column;
+
+        padding: 5px;
+    }
+
+    .search-box {
+        min-height: 52px;
+
+        padding-left: 17px;
+    }
+
+    .search-button {
+        width: 100%;
+        height: 48px;
+    }
+
+    .appointments-section {
+        padding: 18px 12px;
+    }
+
+    .heading-left h2 {
+        font-size: 21px;
+    }
+
+    .today-date {
+        font-size: 13px;
+    }
+}

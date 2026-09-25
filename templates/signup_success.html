@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account Created Successfully - CareBridge</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="success-page">
+
+    <!-- ================= BACKGROUND DECORATIONS ================= -->
+
+    <div class="success-decoration decoration-one"></div>
+    <div class="success-decoration decoration-two"></div>
+
+    <div class="success-plus plus-one">+</div>
+    <div class="success-plus plus-two">+</div>
+    <div class="success-plus plus-three">+</div>
+    <div class="success-plus plus-four">+</div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="success-header">
+
+        <div class="success-brand">
+
+            <div class="success-logo">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+
+                    <path
+                        d="M50 88 C44 82 16 61 10 43
+                           C4 25 15 9 32 9
+                           C41 9 47 14 50 21
+                           C53 14 59 9 68 9
+                           C85 9 96 25 90 43
+                           C84 61 56 82 50 88Z"
+                        fill="#3b9634"/>
+
+                    <path
+                        d="M55 30 H65 V40 H75 V50
+                           H65 V60 H55 V50 H45 V40 H55 Z"
+                        fill="#3b9634"
+                        stroke="#ffffff"
+                        stroke-width="3"
+                        stroke-linejoin="round"/>
+
+                </svg>
+            </div>
+
+            <div class="success-brand-text">
+                <div>CareBridge</div>
+                <span>Hospital Portal</span>
+            </div>
+
+        </div>
+
+
+        <div class="success-trusted">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Trusted. Secure. Connected.</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="success-main">
+
+        <div class="success-card">
+
+
+            <!-- SUCCESS ICON + DOTS -->
+
+            <div class="success-icon-area">
+
+                <span class="success-dot dot-one"></span>
+                <span class="success-dot dot-two"></span>
+                <span class="success-dot dot-three"></span>
+                <span class="success-dot dot-four"></span>
+                <span class="success-dot dot-five"></span>
+                <span class="success-dot dot-six"></span>
+                <span class="success-dot dot-seven"></span>
+
+                <div class="success-icon">
+                    <div class="success-icon-inner">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- HEADING -->
+
+            <h1>Account Created Successfully!</h1>
+
+            <p class="success-subtitle">
+                Your CareBridge account has been created successfully.
+                <br>
+                You can now log in to access your patient dashboard.
+            </p>
+
+
+            <!-- PATIENT ID -->
+
+            <div class="patient-id-box">
+
+                <div class="patient-id-icon">
+                    <i class="fa-regular fa-id-card"></i>
+                </div>
+
+                <div class="patient-id-content">
+
+                    <span>Your Patient ID</span>
+
+                    <strong>{{ patient_id }}</strong>
+
+                    <p>
+                        Please save your Patient ID for future reference.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHAT'S NEXT -->
+
+            <section class="success-next">
+
+                <h2>What's Next?</h2>
+
+                <div class="next-options">
+
+
+                    <!-- BOOK APPOINTMENT -->
+
+                    <div class="next-option">
+
+                        <div class="next-icon">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+
+                        <strong>Book Appointment</strong>
+
+                        <span>
+                            Schedule and manage<br>
+                            your appointments
+                        </span>
+
+                    </div>
+
+
+                    <!-- TEST RESULTS -->
+
+                    <div class="next-option">
+
+                        <div class="next-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <strong>Test Results</strong>
+
+                        <span>
+                            View your lab test<br>
+                            results and reports
+                        </span>
+
+                    </div>
+
+
+                    <!-- QUEUE STATUS -->
+
+                    <div class="next-option">
+
+                        <div class="next-icon">
+                            <i class="fa-solid fa-list-ol"></i>
+                        </div>
+
+                        <strong>Queue Status</strong>
+
+                        <span>
+                            Stay updated with live<br>
+                            token status
+                        </span>
+
+                    </div>
+
+
+                    <!-- EMERGENCY CONTACTS -->
+
+                    <div class="next-option">
+
+                        <div class="next-icon">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+
+                        <strong>Emergency Contacts</strong>
+
+                        <span>
+                            Quick access to important<br>
+                            contacts
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BUTTONS -->
+
+            <div class="success-buttons">
+
+                <a href="{{ url_for('patient_login') }}"
+                   class="success-login-button">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Login Now</span>
+
+                </a>
+
+
+                <a href="{{ url_for('home') }}"
+                   class="success-home-button">
+
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- SUPPORT -->
+
+            <div class="success-support">
+
+                <i class="fa-regular fa-circle-question"></i>
+
+                <span>Need help?</span>
+
+                <a href="#">Contact Support</a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= HOSPITAL DECORATION ================= -->
+
+    <div class="success-hospital-art">
+
+        <div class="hospital-building">
+
+            <div class="hospital-roof"></div>
+
+            <div class="hospital-main-building">
+
+                <div class="hospital-cross">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="hospital-window window-one"></div>
+                <div class="hospital-window window-two"></div>
+                <div class="hospital-window window-three"></div>
+                <div class="hospital-window window-four"></div>
+                <div class="hospital-window window-five"></div>
+                <div class="hospital-window window-six"></div>
+
+                <div class="hospital-door">
+                    <span>HOSPITAL</span>
+                </div>
+
+            </div>
+
+            <div class="hospital-side side-left"></div>
+            <div class="hospital-side side-right"></div>
+
+        </div>
+
+
+        <div class="hospital-tree tree-one">
+            <span></span>
+        </div>
+
+        <div class="hospital-tree tree-two">
+            <span></span>
+        </div>
+
+        <div class="hospital-ground"></div>
+
+    </div>
+
+
+    <!-- ================= MEDICAL DECORATION ================= -->
+
+    <div class="success-medical-art">
+
+        <div class="medical-shield">
+
+            <i class="fa-solid fa-plus"></i>
+
+        </div>
+
+        <div class="medical-leaf leaf-one"></div>
+        <div class="medical-leaf leaf-two"></div>
+        <div class="medical-leaf leaf-three"></div>
+        <div class="medical-leaf leaf-four"></div>
+        <div class="medical-leaf leaf-five"></div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Receptionist Login - CareBridge</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='receptionist_login.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <!-- Background Decorations -->
+    <div class="bg-circle top-left"></div>
+    <div class="bg-circle top-right"></div>
+    <div class="bg-circle bottom-left"></div>
+    <div class="bg-circle bottom-right"></div>
+
+    <!-- Decorative Leaves -->
+    <div class="leaf-decoration left-leaves">
+        <span class="leaf leaf-1"></span>
+        <span class="leaf leaf-2"></span>
+        <span class="leaf leaf-3"></span>
+        <span class="leaf leaf-4"></span>
+        <span class="leaf leaf-5"></span>
+    </div>
+
+    <div class="leaf-decoration right-leaves">
+        <span class="leaf leaf-1"></span>
+        <span class="leaf leaf-2"></span>
+        <span class="leaf leaf-3"></span>
+        <span class="leaf leaf-4"></span>
+    </div>
+
+
+    <!-- Login Card -->
+    <div class="login-card">
+
+        <!-- Receptionist Illustration -->
+        <div class="reception-illustration">
+
+            <div class="illustration-circle"></div>
+
+            <div class="reception-person">
+                <div class="person-head"></div>
+                <div class="person-hair"></div>
+                <div class="person-body"></div>
+                <div class="person-collar"></div>
+            </div>
+
+            <div class="reception-desk">
+                <div class="desk-top"></div>
+
+                <div class="desk-front">
+                    <div class="medical-cross">+</div>
+                </div>
+            </div>
+
+            <!-- Small decorative lines -->
+            <span class="sound-line line-left-1"></span>
+            <span class="sound-line line-left-2"></span>
+            <span class="sound-line line-left-3"></span>
+
+            <span class="sound-line line-right-1"></span>
+            <span class="sound-line line-right-2"></span>
+            <span class="sound-line line-right-3"></span>
+
+        </div>
+
+
+        <!-- CareBridge Brand -->
+        <div class="brand">
+
+            <div class="brand-heart">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span class="brand-cross">+</span>
+            </div>
+
+            <div class="brand-name">
+                <h1>CareBridge</h1>
+                <p>Hospital Reception</p>
+            </div>
+
+        </div>
+
+
+        <!-- Title -->
+        <h2 class="login-title">
+            Receptionist Login
+        </h2>
+
+
+        <!-- Login Form -->
+        <form class="login-form"
+              method="POST"
+              action="{{ url_for('receptionist_login') }}">
+
+            <!-- Username -->
+            <div class="form-group">
+
+                <label for="username">
+                    Username / Receptionist ID
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username or ID"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group password-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye-button"
+                        onclick="togglePassword()">
+
+                        <i class="fa-regular fa-eye" id="eyeIcon"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Login -->
+            <button type="submit"
+                    class="login-button">
+
+                <span>LOGIN</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+
+        <!-- Divider -->
+        <div class="divider">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- Help -->
+        <div class="help-text">
+
+            <span>Need help?</span>
+
+            <a href="#">
+                Contact Admin
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const eye =
+        document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash");
+
+    } else {
+
+        password.type = "password";
+
+        eye.classList.remove("fa-eye-slash");
+        eye.classList.add("fa-eye");
+
+    }
+}
+
+</script>
+
+</body>
+</html>
